@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+using System.Collections;
+using System.IO;
 using System.Windows.Forms;
+using System.Text;
 
 namespace I18nIt
 {
@@ -16,14 +13,28 @@ namespace I18nIt
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            var openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                LoadBaseFileAndFillBaseView(lvBaseList, openFileDialog.FileName);
+            }
         }
 
-        private void findToolStripMenuItem_Click(object sender, EventArgs e)
+        private static void LoadBaseFileAndFillBaseView(ListView listView, string fileName)
         {
-
+            if (File.Exists(fileName))
+            {
+                var keyTexts = new ListView.ListViewItemCollection(listView);
+                TextReader textReader = new StreamReader(fileName, Encoding.UTF8);
+                string line;
+                while ((line = textReader.ReadLine()) != null)
+                {
+                    var keyAndText = line.Split('=');
+                    keyTexts.Add(keyAndText[0], keyAndText[1], 0);
+                }
+            }
         }
     }
 }

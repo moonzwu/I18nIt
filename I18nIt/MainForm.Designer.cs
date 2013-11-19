@@ -30,13 +30,13 @@
         {
             this.menubar = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.validationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.miOpenBaseFile = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.findToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.validationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkUpcaselowcaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkGrammarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,9 +44,10 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scContent = new System.Windows.Forms.SplitContainer();
-            this.lbEnglish = new System.Windows.Forms.ListBox();
-            this.lbLocalize = new System.Windows.Forms.ListBox();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.miOpenTranslateFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.lvTranslateList = new System.Windows.Forms.ListView();
+            this.lvBaseList = new System.Windows.Forms.ListView();
             this.menubar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scContent)).BeginInit();
             this.scContent.Panel1.SuspendLayout();
@@ -70,13 +71,38 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openToolStripMenuItem,
+            this.miOpenBaseFile,
+            this.miOpenTranslateFile,
             this.saveAsToolStripMenuItem,
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.fileToolStripMenuItem.Text = "File";
+            // 
+            // miOpenBaseFile
+            // 
+            this.miOpenBaseFile.Name = "miOpenBaseFile";
+            this.miOpenBaseFile.Size = new System.Drawing.Size(186, 22);
+            this.miOpenBaseFile.Text = "Open Base File";
+            this.miOpenBaseFile.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
+            // saveAsToolStripMenuItem
+            // 
+            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.saveAsToolStripMenuItem.Text = "Save as ...";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(183, 6);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
             // 
             // editToolStripMenuItem
             // 
@@ -85,6 +111,12 @@
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // findToolStripMenuItem
+            // 
+            this.findToolStripMenuItem.Name = "findToolStripMenuItem";
+            this.findToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.findToolStripMenuItem.Text = "Find Replace";
             // 
             // validationToolStripMenuItem
             // 
@@ -95,36 +127,6 @@
             this.validationToolStripMenuItem.Name = "validationToolStripMenuItem";
             this.validationToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.validationToolStripMenuItem.Text = "Validation";
-            // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.openToolStripMenuItem.Text = "Open";
-            // 
-            // saveAsToolStripMenuItem
-            // 
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.saveAsToolStripMenuItem.Text = "Save as ...";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            // 
-            // findToolStripMenuItem
-            // 
-            this.findToolStripMenuItem.Name = "findToolStripMenuItem";
-            this.findToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.findToolStripMenuItem.Text = "Find Replace";
-            this.findToolStripMenuItem.Click += new System.EventHandler(this.findToolStripMenuItem_Click);
             // 
             // checkToolStripMenuItem
             // 
@@ -156,13 +158,13 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // manToolStripMenuItem
             // 
             this.manToolStripMenuItem.Name = "manToolStripMenuItem";
-            this.manToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.manToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.manToolStripMenuItem.Text = "manual";
             // 
             // scContent
@@ -173,34 +175,14 @@
             // 
             // scContent.Panel1
             // 
-            this.scContent.Panel1.Controls.Add(this.lbEnglish);
+            this.scContent.Panel1.Controls.Add(this.lvBaseList);
             // 
             // scContent.Panel2
             // 
-            this.scContent.Panel2.Controls.Add(this.lbLocalize);
+            this.scContent.Panel2.Controls.Add(this.lvTranslateList);
             this.scContent.Size = new System.Drawing.Size(844, 465);
             this.scContent.SplitterDistance = 281;
             this.scContent.TabIndex = 1;
-            // 
-            // lbEnglish
-            // 
-            this.lbEnglish.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbEnglish.FormattingEnabled = true;
-            this.lbEnglish.ItemHeight = 12;
-            this.lbEnglish.Location = new System.Drawing.Point(0, 0);
-            this.lbEnglish.Name = "lbEnglish";
-            this.lbEnglish.Size = new System.Drawing.Size(281, 465);
-            this.lbEnglish.TabIndex = 0;
-            // 
-            // lbLocalize
-            // 
-            this.lbLocalize.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbLocalize.FormattingEnabled = true;
-            this.lbLocalize.ItemHeight = 12;
-            this.lbLocalize.Location = new System.Drawing.Point(0, 0);
-            this.lbLocalize.Name = "lbLocalize";
-            this.lbLocalize.Size = new System.Drawing.Size(559, 465);
-            this.lbLocalize.TabIndex = 0;
             // 
             // statusStrip
             // 
@@ -210,6 +192,35 @@
             this.statusStrip.Size = new System.Drawing.Size(844, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "status";
+            // 
+            // miOpenTranslateFile
+            // 
+            this.miOpenTranslateFile.Name = "miOpenTranslateFile";
+            this.miOpenTranslateFile.Size = new System.Drawing.Size(186, 22);
+            this.miOpenTranslateFile.Text = "Open Translate File";
+            // 
+            // lvTranslateList
+            // 
+            this.lvTranslateList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvTranslateList.FullRowSelect = true;
+            this.lvTranslateList.Location = new System.Drawing.Point(0, 0);
+            this.lvTranslateList.Name = "lvTranslateList";
+            this.lvTranslateList.Size = new System.Drawing.Size(559, 465);
+            this.lvTranslateList.TabIndex = 0;
+            this.lvTranslateList.UseCompatibleStateImageBehavior = false;
+            this.lvTranslateList.View = System.Windows.Forms.View.List;
+            // 
+            // lvBaseList
+            // 
+            this.lvBaseList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvBaseList.FullRowSelect = true;
+            this.lvBaseList.GridLines = true;
+            this.lvBaseList.Location = new System.Drawing.Point(0, 0);
+            this.lvBaseList.Name = "lvBaseList";
+            this.lvBaseList.Size = new System.Drawing.Size(281, 465);
+            this.lvBaseList.TabIndex = 0;
+            this.lvBaseList.UseCompatibleStateImageBehavior = false;
+            this.lvBaseList.View = System.Windows.Forms.View.Details;
             // 
             // MainForm
             // 
@@ -224,7 +235,6 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "I18nIt";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.menubar.ResumeLayout(false);
             this.menubar.PerformLayout();
             this.scContent.Panel1.ResumeLayout(false);
@@ -240,7 +250,7 @@
 
         private System.Windows.Forms.MenuStrip menubar;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem miOpenBaseFile;
         private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
@@ -254,9 +264,10 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manToolStripMenuItem;
         private System.Windows.Forms.SplitContainer scContent;
-        private System.Windows.Forms.ListBox lbEnglish;
-        private System.Windows.Forms.ListBox lbLocalize;
         private System.Windows.Forms.StatusStrip statusStrip;
+        private System.Windows.Forms.ToolStripMenuItem miOpenTranslateFile;
+        private System.Windows.Forms.ListView lvTranslateList;
+        private System.Windows.Forms.ListView lvBaseList;
     }
 }
 
