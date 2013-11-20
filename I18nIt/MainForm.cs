@@ -8,6 +8,8 @@ namespace I18nIt
 {
     public partial class MainForm : Form
     {
+        private const int FixPading = 5;
+
         public MainForm()
         {
             InitializeComponent();
@@ -18,23 +20,40 @@ namespace I18nIt
             var openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                LoadBaseFileAndFillBaseView(lvBaseList, openFileDialog.FileName);
+                var fm = new FileMenu();
+                fm.LoadBaseFileAndFillBaseView(lvBaseList, openFileDialog.FileName);
             }
         }
 
-        private static void LoadBaseFileAndFillBaseView(ListView listView, string fileName)
+        private void scContent_Paint(object sender, PaintEventArgs e)
         {
-            if (File.Exists(fileName))
+            lvBaseList.Columns[0].Width = lvBaseList.Width - FixPading;
+            lvTranslateList.Columns[0].Width = lvTranslateList.Width - FixPading;
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            var ch = new ColumnHeader("Base String") { Width = lvBaseList.Width - FixPading };
+            lvBaseList.Columns.Add(ch);
+            var ch2 = new ColumnHeader("Translate String") {Width = lvTranslateList.Width - FixPading};
+            lvTranslateList.Columns.Add(ch2);
+        }
+
+        private void miOpenTranslateFile_Click(object sender, EventArgs e)
+        {
+            var openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                var keyTexts = new ListView.ListViewItemCollection(listView);
-                TextReader textReader = new StreamReader(fileName, Encoding.UTF8);
-                string line;
-                while ((line = textReader.ReadLine()) != null)
-                {
-                    var keyAndText = line.Split('=');
-                    keyTexts.Add(keyAndText[0], keyAndText[1], 0);
-                }
+                var fm = new FileMenu();
+                fm.LoadBaseFileAndFillBaseView(lvTranslateList, openFileDialog.FileName);
             }
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+      
     }
 }

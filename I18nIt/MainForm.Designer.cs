@@ -31,6 +31,7 @@
             this.menubar = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miOpenBaseFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.miOpenTranslateFile = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,10 +45,9 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scContent = new System.Windows.Forms.SplitContainer();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.miOpenTranslateFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.lvTranslateList = new System.Windows.Forms.ListView();
             this.lvBaseList = new System.Windows.Forms.ListView();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.lvTranslateList = new System.Windows.Forms.ListView();
             this.menubar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scContent)).BeginInit();
             this.scContent.Panel1.SuspendLayout();
@@ -64,7 +64,7 @@
             this.helpToolStripMenuItem});
             this.menubar.Location = new System.Drawing.Point(0, 0);
             this.menubar.Name = "menubar";
-            this.menubar.Size = new System.Drawing.Size(844, 24);
+            this.menubar.Size = new System.Drawing.Size(844, 25);
             this.menubar.TabIndex = 0;
             this.menubar.Text = "menuStrip1";
             // 
@@ -77,45 +77,53 @@
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(39, 21);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // miOpenBaseFile
             // 
             this.miOpenBaseFile.Name = "miOpenBaseFile";
-            this.miOpenBaseFile.Size = new System.Drawing.Size(186, 22);
+            this.miOpenBaseFile.Size = new System.Drawing.Size(188, 22);
             this.miOpenBaseFile.Text = "Open Base File";
             this.miOpenBaseFile.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
+            // miOpenTranslateFile
+            // 
+            this.miOpenTranslateFile.Name = "miOpenTranslateFile";
+            this.miOpenTranslateFile.Size = new System.Drawing.Size(188, 22);
+            this.miOpenTranslateFile.Text = "Open Translate File";
+            this.miOpenTranslateFile.Click += new System.EventHandler(this.miOpenTranslateFile_Click);
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.saveAsToolStripMenuItem.Text = "Save as ...";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(183, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(185, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.findToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(42, 21);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // findToolStripMenuItem
             // 
             this.findToolStripMenuItem.Name = "findToolStripMenuItem";
-            this.findToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.findToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.findToolStripMenuItem.Text = "Find Replace";
             // 
             // validationToolStripMenuItem
@@ -125,25 +133,25 @@
             this.checkUpcaselowcaseToolStripMenuItem,
             this.checkGrammarToolStripMenuItem});
             this.validationToolStripMenuItem.Name = "validationToolStripMenuItem";
-            this.validationToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.validationToolStripMenuItem.Size = new System.Drawing.Size(78, 21);
             this.validationToolStripMenuItem.Text = "Validation";
             // 
             // checkToolStripMenuItem
             // 
             this.checkToolStripMenuItem.Name = "checkToolStripMenuItem";
-            this.checkToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.checkToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.checkToolStripMenuItem.Text = "Check delimiter";
             // 
             // checkUpcaselowcaseToolStripMenuItem
             // 
             this.checkUpcaselowcaseToolStripMenuItem.Name = "checkUpcaselowcaseToolStripMenuItem";
-            this.checkUpcaselowcaseToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.checkUpcaselowcaseToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.checkUpcaselowcaseToolStripMenuItem.Text = "Check upcase/lowcase";
             // 
             // checkGrammarToolStripMenuItem
             // 
             this.checkGrammarToolStripMenuItem.Name = "checkGrammarToolStripMenuItem";
-            this.checkGrammarToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.checkGrammarToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.checkGrammarToolStripMenuItem.Text = "Check grammar";
             // 
             // helpToolStripMenuItem
@@ -152,25 +160,25 @@
             this.aboutToolStripMenuItem,
             this.manToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // manToolStripMenuItem
             // 
             this.manToolStripMenuItem.Name = "manToolStripMenuItem";
-            this.manToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.manToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.manToolStripMenuItem.Text = "manual";
             // 
             // scContent
             // 
             this.scContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.scContent.Location = new System.Drawing.Point(0, 24);
+            this.scContent.Location = new System.Drawing.Point(0, 25);
             this.scContent.Name = "scContent";
             // 
             // scContent.Panel1
@@ -180,9 +188,23 @@
             // scContent.Panel2
             // 
             this.scContent.Panel2.Controls.Add(this.lvTranslateList);
-            this.scContent.Size = new System.Drawing.Size(844, 465);
+            this.scContent.Size = new System.Drawing.Size(844, 464);
             this.scContent.SplitterDistance = 281;
             this.scContent.TabIndex = 1;
+            this.scContent.Paint += new System.Windows.Forms.PaintEventHandler(this.scContent_Paint);
+            // 
+            // lvBaseList
+            // 
+            this.lvBaseList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvBaseList.FullRowSelect = true;
+            this.lvBaseList.GridLines = true;
+            this.lvBaseList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.lvBaseList.Location = new System.Drawing.Point(0, 0);
+            this.lvBaseList.Name = "lvBaseList";
+            this.lvBaseList.Size = new System.Drawing.Size(281, 464);
+            this.lvBaseList.TabIndex = 0;
+            this.lvBaseList.UseCompatibleStateImageBehavior = false;
+            this.lvBaseList.View = System.Windows.Forms.View.Details;
             // 
             // statusStrip
             // 
@@ -193,34 +215,18 @@
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "status";
             // 
-            // miOpenTranslateFile
-            // 
-            this.miOpenTranslateFile.Name = "miOpenTranslateFile";
-            this.miOpenTranslateFile.Size = new System.Drawing.Size(186, 22);
-            this.miOpenTranslateFile.Text = "Open Translate File";
-            // 
             // lvTranslateList
             // 
             this.lvTranslateList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvTranslateList.FullRowSelect = true;
+            this.lvTranslateList.GridLines = true;
+            this.lvTranslateList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvTranslateList.Location = new System.Drawing.Point(0, 0);
             this.lvTranslateList.Name = "lvTranslateList";
-            this.lvTranslateList.Size = new System.Drawing.Size(559, 465);
-            this.lvTranslateList.TabIndex = 0;
+            this.lvTranslateList.Size = new System.Drawing.Size(559, 464);
+            this.lvTranslateList.TabIndex = 1;
             this.lvTranslateList.UseCompatibleStateImageBehavior = false;
-            this.lvTranslateList.View = System.Windows.Forms.View.List;
-            // 
-            // lvBaseList
-            // 
-            this.lvBaseList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvBaseList.FullRowSelect = true;
-            this.lvBaseList.GridLines = true;
-            this.lvBaseList.Location = new System.Drawing.Point(0, 0);
-            this.lvBaseList.Name = "lvBaseList";
-            this.lvBaseList.Size = new System.Drawing.Size(281, 465);
-            this.lvBaseList.TabIndex = 0;
-            this.lvBaseList.UseCompatibleStateImageBehavior = false;
-            this.lvBaseList.View = System.Windows.Forms.View.Details;
+            this.lvTranslateList.View = System.Windows.Forms.View.Details;
             // 
             // MainForm
             // 
@@ -235,6 +241,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "I18nIt";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menubar.ResumeLayout(false);
             this.menubar.PerformLayout();
             this.scContent.Panel1.ResumeLayout(false);
@@ -266,8 +273,8 @@
         private System.Windows.Forms.SplitContainer scContent;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripMenuItem miOpenTranslateFile;
-        private System.Windows.Forms.ListView lvTranslateList;
         private System.Windows.Forms.ListView lvBaseList;
+        private System.Windows.Forms.ListView lvTranslateList;
     }
 }
 
