@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using System.Text;
 
@@ -54,6 +55,35 @@ namespace I18nIt
             Application.Exit();
         }
 
-      
+        private void lvBaseList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvBaseList.Focused)
+            {
+                CascadingSelected(lvBaseList, lvTranslateList);
+            }
+        }
+
+        private void lvTranslateList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvTranslateList.Focused)
+            {
+                CascadingSelected(lvTranslateList, lvBaseList);
+            }
+        }
+
+        private static void CascadingSelected(ListView baseList, ListView translateList)
+        {
+            var selectedItems = baseList.SelectedItems;
+            if (selectedItems.Count != 0)
+            {
+                var name = selectedItems[0].Name;
+                var listViewItems = translateList.Items.Find(name, true);
+                if (listViewItems.Length > 0)
+                {
+                    translateList.SelectedItems.Clear();
+                    listViewItems[0].Selected = true;
+                }
+            }
+        }
     }
 }

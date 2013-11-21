@@ -46,8 +46,8 @@
             this.manToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scContent = new System.Windows.Forms.SplitContainer();
             this.lvBaseList = new System.Windows.Forms.ListView();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.lvTranslateList = new System.Windows.Forms.ListView();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.menubar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scContent)).BeginInit();
             this.scContent.Panel1.SuspendLayout();
@@ -199,12 +199,29 @@
             this.lvBaseList.FullRowSelect = true;
             this.lvBaseList.GridLines = true;
             this.lvBaseList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.lvBaseList.HideSelection = false;
             this.lvBaseList.Location = new System.Drawing.Point(0, 0);
             this.lvBaseList.Name = "lvBaseList";
             this.lvBaseList.Size = new System.Drawing.Size(281, 464);
             this.lvBaseList.TabIndex = 0;
             this.lvBaseList.UseCompatibleStateImageBehavior = false;
             this.lvBaseList.View = System.Windows.Forms.View.Details;
+            this.lvBaseList.SelectedIndexChanged += new System.EventHandler(this.lvBaseList_SelectedIndexChanged);
+            // 
+            // lvTranslateList
+            // 
+            this.lvTranslateList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvTranslateList.FullRowSelect = true;
+            this.lvTranslateList.GridLines = true;
+            this.lvTranslateList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.lvTranslateList.HideSelection = false;
+            this.lvTranslateList.Location = new System.Drawing.Point(0, 0);
+            this.lvTranslateList.Name = "lvTranslateList";
+            this.lvTranslateList.Size = new System.Drawing.Size(559, 464);
+            this.lvTranslateList.TabIndex = 1;
+            this.lvTranslateList.UseCompatibleStateImageBehavior = false;
+            this.lvTranslateList.View = System.Windows.Forms.View.Details;
+            this.lvTranslateList.SelectedIndexChanged += new System.EventHandler(this.lvTranslateList_SelectedIndexChanged);
             // 
             // statusStrip
             // 
@@ -214,19 +231,6 @@
             this.statusStrip.Size = new System.Drawing.Size(844, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "status";
-            // 
-            // lvTranslateList
-            // 
-            this.lvTranslateList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvTranslateList.FullRowSelect = true;
-            this.lvTranslateList.GridLines = true;
-            this.lvTranslateList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.lvTranslateList.Location = new System.Drawing.Point(0, 0);
-            this.lvTranslateList.Name = "lvTranslateList";
-            this.lvTranslateList.Size = new System.Drawing.Size(559, 464);
-            this.lvTranslateList.TabIndex = 1;
-            this.lvTranslateList.UseCompatibleStateImageBehavior = false;
-            this.lvTranslateList.View = System.Windows.Forms.View.Details;
             // 
             // MainForm
             // 
