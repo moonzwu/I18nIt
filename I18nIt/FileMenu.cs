@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace I18nIt
@@ -19,6 +20,11 @@ namespace I18nIt
                     string line;
                     while ((line = textReader.ReadLine()) != null)
                     {
+                        if (!ResourceLineValidator.IsValidLine(line))
+                        {
+                            continue;
+                        }
+
                         var keyAndText = line.Split('=');
                         keyTexts.Add(keyAndText[0], keyAndText[1], 0);
                     }

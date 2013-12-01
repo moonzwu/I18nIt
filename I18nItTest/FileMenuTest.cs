@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Windows.Forms;
 using I18nIt;
@@ -18,5 +19,6 @@ namespace I18nItTest
             Assert.AreEqual(listView.Items[0].Text, "名字");
             Assert.AreEqual(listView.Items[1].Text, "年龄");
         }
+
     }
 }
