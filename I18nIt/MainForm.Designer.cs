@@ -207,6 +207,7 @@
             this.lvBaseList.UseCompatibleStateImageBehavior = false;
             this.lvBaseList.View = System.Windows.Forms.View.Details;
             this.lvBaseList.SelectedIndexChanged += new System.EventHandler(this.lvBaseList_SelectedIndexChanged);
+            this.lvBaseList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvBaseList_MouseDoubleClick);
             // 
             // lvTranslateList
             // 
@@ -222,6 +223,7 @@
             this.lvTranslateList.UseCompatibleStateImageBehavior = false;
             this.lvTranslateList.View = System.Windows.Forms.View.Details;
             this.lvTranslateList.SelectedIndexChanged += new System.EventHandler(this.lvTranslateList_SelectedIndexChanged);
+            this.lvTranslateList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvTranslateList_MouseDoubleClick);
             // 
             // statusStrip
             // 

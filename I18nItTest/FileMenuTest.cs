@@ -14,10 +14,20 @@ namespace I18nItTest
         {
             var mf = new FileMenu();
             var listView = new ListView();
-            mf.LoadBaseFileAndFillBaseView(listView, "resource/teststringfiles.txt");
+            mf.LoadResourceFileAndFillView(listView, "resource/teststringfiles.txt");
             Assert.AreEqual(listView.Items.Count, 2);
             Assert.AreEqual(listView.Items[0].Text, "名字");
             Assert.AreEqual(listView.Items[1].Text, "年龄");
+        }
+
+        [TestMethod]
+        public void should_clear_previous_load_text_before_load_a_new_file()
+        {
+            var mf = new FileMenu();
+            var listView = new ListView();
+            mf.LoadResourceFileAndFillView(listView, "resource/teststringfiles.txt");
+            mf.LoadResourceFileAndFillView(listView, "resource/teststringfiles.txt");
+            Assert.AreEqual(listView.Items.Count, 2);
         }
 
     }

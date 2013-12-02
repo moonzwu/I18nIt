@@ -10,24 +10,30 @@ namespace I18nIt
 {
     public class FileMenu
     {
-        public void LoadBaseFileAndFillBaseView(ListView listView, string fileName)
+        public void LoadResourceFileAndFillView(ListView listView, string fileName)
         {
             if (File.Exists(fileName))
             {
-                var keyTexts = new ListView.ListViewItemCollection(listView);
-                using (TextReader textReader = new StreamReader(fileName, Encoding.UTF8))
-                {
-                    string line;
-                    while ((line = textReader.ReadLine()) != null)
-                    {
-                        if (!ResourceLineValidator.IsValidLine(line))
-                        {
-                            continue;
-                        }
+                listView.Items.Clear();
+                ReadAndFill(listView, fileName);
+            }
+        }
 
-                        var keyAndText = line.Split('=');
-                        keyTexts.Add(keyAndText[0], keyAndText[1], 0);
+        private static void ReadAndFill(ListView listView, string fileName)
+        {
+            var keyTexts = new ListView.ListViewItemCollection(listView);
+            using (TextReader textReader = new StreamReader(fileName, Encoding.UTF8))
+            {
+                string line;
+                while ((line = textReader.ReadLine()) != null)
+                {
+                    if (!ResourceLineValidator.IsValidLine(line))
+                    {
+                        continue;
                     }
+
+                    var keyAndText = line.Split('=');
+                    keyTexts.Add(keyAndText[0], keyAndText[1], 0);
                 }
             }
         }

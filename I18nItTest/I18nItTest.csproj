@@ -71,7 +71,7 @@
   <ItemGroup>
     <Compile Include="FileMenuTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="ResourceLineValidatorTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\I18nIt\I18nIt.csproj">

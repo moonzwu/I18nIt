@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections;
-using System.IO;
-using System.Linq;
 using System.Windows.Forms;
-using System.Text;
 
 namespace I18nIt
 {
@@ -22,7 +18,7 @@ namespace I18nIt
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 var fm = new FileMenu();
-                fm.LoadBaseFileAndFillBaseView(lvBaseList, openFileDialog.FileName);
+                fm.LoadResourceFileAndFillView(lvBaseList, openFileDialog.FileName);
             }
         }
 
@@ -34,7 +30,7 @@ namespace I18nIt
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            var ch = new ColumnHeader("Base String") { Width = lvBaseList.Width - FixPading };
+            var ch = new ColumnHeader("Base String") {Width = lvBaseList.Width - FixPading};
             lvBaseList.Columns.Add(ch);
             var ch2 = new ColumnHeader("Translate String") {Width = lvTranslateList.Width - FixPading};
             lvTranslateList.Columns.Add(ch2);
@@ -46,7 +42,7 @@ namespace I18nIt
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 var fm = new FileMenu();
-                fm.LoadBaseFileAndFillBaseView(lvTranslateList, openFileDialog.FileName);
+                fm.LoadResourceFileAndFillView(lvTranslateList, openFileDialog.FileName);
             }
         }
 
@@ -71,19 +67,38 @@ namespace I18nIt
             }
         }
 
+        private void lvBaseList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            EditText(lvBaseList);
+        }
+
+        private void lvTranslateList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            EditText(lvTranslateList);
+        }
+
         private static void CascadingSelected(ListView baseList, ListView translateList)
         {
-            var selectedItems = baseList.SelectedItems;
+            ListView.SelectedListViewItemCollection selectedItems = baseList.SelectedItems;
             if (selectedItems.Count != 0)
             {
-                var name = selectedItems[0].Name;
-                var listViewItems = translateList.Items.Find(name, true);
+                string name = selectedItems[0].Name;
+                ListViewItem[] listViewItems = translateList.Items.Find(name, true);
                 if (listViewItems.Length > 0)
                 {
                     translateList.SelectedItems.Clear();
-                    listViewItems[0].Selected = true;
+                    var selectedItem = listViewItems[0];
+                    selectedItem.Selected = true;
+                    selectedItem.EnsureVisible();
                 }
             }
+        }
+
+        private static void EditText(ListView lv)
+        {
+            lv.LabelEdit = true;
+            ListViewItem selectedItem = lv.SelectedItems[0];
+            selectedItem.BeginEdit();
         }
     }
 }
