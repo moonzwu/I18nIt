@@ -25,9 +25,10 @@ namespace I18nItTest
         {
             var mf = new FileMenu();
             var listView = new ListView();
-            mf.LoadResourceFileAndFillView(listView, "resource/teststringfiles.properties");
-            mf.LoadResourceFileAndFillView(listView, "resource/teststringfiles.properties");
+            mf.LoadResourceFileAndFillView(listView, "resource/teststringfiles.txt");
+            mf.LoadResourceFileAndFillView(listView, "resource/teststringfiles.txt");
             Assert.AreEqual(listView.Items.Count, 2);
         }
+
     }
 }

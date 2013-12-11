@@ -22,18 +22,12 @@ namespace I18nIt
         private static void ReadAndFill(ListView listView, string fileName)
         {
             var keyTexts = new ListView.ListViewItemCollection(listView);
-            using (TextReader textReader = new StreamReader(fileName, Encoding.UTF8))
+            var stringResourceLoader = new StringResourceLoader();
+            if (stringResourceLoader.LoadFile(fileName))
             {
-                string line;
-                while ((line = textReader.ReadLine()) != null)
+                foreach ( var keyvalue in stringResourceLoader.ResourceStringsDictionary )
                 {
-                    if (!ResourceLineValidator.IsValidLine(line))
-                    {
-                        continue;
-                    }
-
-                    var keyAndText = line.Split('=');
-                    keyTexts.Add(keyAndText[0], keyAndText[1], 0);
+                    keyTexts.Add(keyvalue.Key, keyvalue.Value, 0);
                 }
             }
         }

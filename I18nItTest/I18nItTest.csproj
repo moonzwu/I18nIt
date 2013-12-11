@@ -81,9 +81,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="resource\teststringfiles.txt">
+    <None Include="resource\teststringfiles.properties">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resource\mpresource.mpx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
