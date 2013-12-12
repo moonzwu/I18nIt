@@ -72,6 +72,7 @@
     <Compile Include="FileMenuTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResourceLineValidatorTest.cs" />
+    <Compile Include="StringResourceCacheTest.cs" />
     <Compile Include="StringResourceLoaderTest.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -11,6 +11,12 @@ namespace I18nIt
     public class StringResourceLoader
     {
         private readonly Dictionary<string, string> _resourceStringsDictionary = new Dictionary<string, string>();
+        private string _resourceFileName;
+
+        public string ResourceFileName
+        {
+            get { return _resourceFileName; }
+        }
 
         public Dictionary<string, string> ResourceStringsDictionary
         {
@@ -36,6 +42,7 @@ namespace I18nIt
         public Boolean LoadFile(string file)
         {
             var type = DecideResourceType(file);
+            _resourceFileName = file;
             switch (type)
             {
                 case StringResouceType.JavaStyle:
