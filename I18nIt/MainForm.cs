@@ -6,6 +6,9 @@ namespace I18nIt
     public partial class MainForm : Form
     {
         private const int FixPading = 5;
+        private string _baseFileName = "";
+        private string _translateFileName = "";
+        private PersistenceSync _sync;
 
         public MainForm()
         {
@@ -19,6 +22,7 @@ namespace I18nIt
             {
                 var fm = new FileMenu();
                 fm.LoadResourceFileAndFillView(lvBaseList, openFileDialog.FileName);
+                _baseFileName = openFileDialog.FileName;
             }
         }
 
@@ -34,6 +38,8 @@ namespace I18nIt
             lvBaseList.Columns.Add(ch);
             var ch2 = new ColumnHeader("Translate String") {Width = lvTranslateList.Width - FixPading};
             lvTranslateList.Columns.Add(ch2);
+
+            _sync = new PersistenceSync();
         }
 
         private void miOpenTranslateFile_Click(object sender, EventArgs e)
@@ -43,6 +49,7 @@ namespace I18nIt
             {
                 var fm = new FileMenu();
                 fm.LoadResourceFileAndFillView(lvTranslateList, openFileDialog.FileName);
+                _translateFileName = openFileDialog.FileName;
             }
         }
 
@@ -99,6 +106,23 @@ namespace I18nIt
             lv.LabelEdit = true;
             ListViewItem selectedItem = lv.SelectedItems[0];
             selectedItem.BeginEdit();
+        }
+
+        private void lvBaseList_AfterLabelEdit(object sender, LabelEditEventArgs e)
+        {
+            UpdateToCache(sender, e, _baseFileName);
+        }
+
+        private void lvTranslateList_AfterLabelEdit(object sender, LabelEditEventArgs e)
+        {
+            UpdateToCache(sender, e, _translateFileName);
+        }
+
+        private static void UpdateToCache(object sender, LabelEditEventArgs e, string fileName)
+        {
+            var stringResourceCache = StringResourceCache.GetInstance();
+            var listView = (ListView) sender;
+            stringResourceCache.Update(fileName, listView.FocusedItem.Name, e.Label);
         }
     }
 }

@@ -6,11 +6,11 @@ namespace I18nIt
     public class StringResourceCache
     {
         private static IDictionary<String, StringResourceLoader> cache = new Dictionary<String, StringResourceLoader>();
-        private static StringResourceCache _self = new StringResourceCache();
+        private static readonly StringResourceCache Self = new StringResourceCache();
 
-        public static StringResourceCache getInstance()
+        public static StringResourceCache GetInstance()
         {
-            return _self;
+            return Self;
         }
 
         public void SetResourceLoader(String key, StringResourceLoader stringResourceLoader)
@@ -26,11 +26,19 @@ namespace I18nIt
             return cache.ContainsKey(key) ? cache[key] : null;
         }
 
+        public ICollection<string> GetAllKeys()
+        {
+            return cache.Keys;
+        } 
+
         public void Update(string key, string stringkey, string stringVal)
         {
-            if (cache.ContainsKey(key))
+            lock (cache)
             {
-                cache[key].ResourceStringsDictionary[stringkey] = stringVal;
+                if (cache.ContainsKey(key))
+                {
+                    cache[key].ResourceStringsDictionary[stringkey] = stringVal;
+                }    
             }
         }
     }

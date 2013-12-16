@@ -11,12 +11,7 @@ namespace I18nIt
     public class StringResourceLoader
     {
         private readonly Dictionary<string, string> _resourceStringsDictionary = new Dictionary<string, string>();
-        private string _resourceFileName;
-
-        public string ResourceFileName
-        {
-            get { return _resourceFileName; }
-        }
+        private string _loadedFile;
 
         public Dictionary<string, string> ResourceStringsDictionary
         {
@@ -42,7 +37,7 @@ namespace I18nIt
         public Boolean LoadFile(string file)
         {
             var type = DecideResourceType(file);
-            _resourceFileName = file;
+            _loadedFile = file;
             switch (type)
             {
                 case StringResouceType.JavaStyle:
@@ -91,6 +86,30 @@ namespace I18nIt
                 }
             }
             return true;
+        }
+
+        public void SaveTo()
+        {
+            var type = DecideResourceType(_loadedFile);
+            switch (type)
+            {
+                case StringResouceType.JavaStyle:
+                     SaveJavaResource(_loadedFile);
+                    break;
+                case StringResouceType.MPStyle:
+                     SaveMpResource(_loadedFile);
+                    break;
+            }
+        }
+
+        private void SaveMpResource(string loadedFile)
+        {
+            
+        }
+
+        private void SaveJavaResource(string loadedFile)
+        {
+            
         }
     }
 }

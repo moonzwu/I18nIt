@@ -14,7 +14,7 @@ namespace I18nItTest
         {
             var stringResourceLoader = new StringResourceLoader();
             stringResourceLoader.LoadFile("resource/teststringfiles.properties");
-            var stringResourceCache = StringResourceCache.getInstance();
+            var stringResourceCache = StringResourceCache.GetInstance();
             var key = new Guid().ToString();
             stringResourceCache.SetResourceLoader(key, stringResourceLoader);
             var resourceLoader = stringResourceCache.GetResourceLoader(key);

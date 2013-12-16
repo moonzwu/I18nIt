@@ -196,32 +196,38 @@
             // lvBaseList
             // 
             this.lvBaseList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvBaseList.Font = new System.Drawing.Font("微软雅黑", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lvBaseList.FullRowSelect = true;
             this.lvBaseList.GridLines = true;
             this.lvBaseList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvBaseList.HideSelection = false;
+            this.lvBaseList.LabelEdit = true;
             this.lvBaseList.Location = new System.Drawing.Point(0, 0);
             this.lvBaseList.Name = "lvBaseList";
             this.lvBaseList.Size = new System.Drawing.Size(281, 464);
             this.lvBaseList.TabIndex = 0;
             this.lvBaseList.UseCompatibleStateImageBehavior = false;
             this.lvBaseList.View = System.Windows.Forms.View.Details;
+            this.lvBaseList.AfterLabelEdit += new System.Windows.Forms.LabelEditEventHandler(this.lvBaseList_AfterLabelEdit);
             this.lvBaseList.SelectedIndexChanged += new System.EventHandler(this.lvBaseList_SelectedIndexChanged);
             this.lvBaseList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvBaseList_MouseDoubleClick);
             // 
             // lvTranslateList
             // 
             this.lvTranslateList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvTranslateList.Font = new System.Drawing.Font("微软雅黑", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lvTranslateList.FullRowSelect = true;
             this.lvTranslateList.GridLines = true;
             this.lvTranslateList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvTranslateList.HideSelection = false;
+            this.lvTranslateList.LabelEdit = true;
             this.lvTranslateList.Location = new System.Drawing.Point(0, 0);
             this.lvTranslateList.Name = "lvTranslateList";
             this.lvTranslateList.Size = new System.Drawing.Size(559, 464);
             this.lvTranslateList.TabIndex = 1;
             this.lvTranslateList.UseCompatibleStateImageBehavior = false;
             this.lvTranslateList.View = System.Windows.Forms.View.Details;
+            this.lvTranslateList.AfterLabelEdit += new System.Windows.Forms.LabelEditEventHandler(this.lvTranslateList_AfterLabelEdit);
             this.lvTranslateList.SelectedIndexChanged += new System.EventHandler(this.lvTranslateList_SelectedIndexChanged);
             this.lvTranslateList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvTranslateList_MouseDoubleClick);
             // 

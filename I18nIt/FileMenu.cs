@@ -25,6 +25,7 @@ namespace I18nIt
             var stringResourceLoader = new StringResourceLoader();
             if (stringResourceLoader.LoadFile(fileName))
             {
+                StringResourceCache.GetInstance().SetResourceLoader(fileName, stringResourceLoader);
                 foreach ( var keyvalue in stringResourceLoader.ResourceStringsDictionary )
                 {
                     keyTexts.Add(keyvalue.Key, keyvalue.Value, 0);
