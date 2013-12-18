@@ -15,10 +15,7 @@ namespace I18nIt
 
         public void SetResourceLoader(String key, StringResourceLoader stringResourceLoader)
         {
-            if (!cache.ContainsKey(key))
-            {
-                cache[key] = stringResourceLoader;
-            }
+            cache[key] = stringResourceLoader;
         }
 
         public StringResourceLoader GetResourceLoader(string key)

@@ -22,10 +22,9 @@ namespace I18nIt
         {
             var cache = StringResourceCache.GetInstance();
             var allKeys = cache.GetAllKeys();
-            foreach (var key in allKeys)
+            foreach (var loader in allKeys.Select(cache.GetResourceLoader))
             {
-                var loader = cache.GetResourceLoader(key);
-
+                loader.Save();
             }
         }
     }

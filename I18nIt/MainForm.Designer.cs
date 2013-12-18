@@ -48,11 +48,13 @@
             this.lvBaseList = new System.Windows.Forms.ListView();
             this.lvTranslateList = new System.Windows.Forms.ListView();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.menubar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scContent)).BeginInit();
             this.scContent.Panel1.SuspendLayout();
             this.scContent.Panel2.SuspendLayout();
             this.scContent.SuspendLayout();
+            this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // menubar
@@ -233,12 +235,19 @@
             // 
             // statusStrip
             // 
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusLabel});
             this.statusStrip.Location = new System.Drawing.Point(0, 489);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.statusStrip.Size = new System.Drawing.Size(844, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "status";
+            // 
+            // statusLabel
+            // 
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(0, 17);
             // 
             // MainForm
             // 
@@ -260,6 +269,8 @@
             this.scContent.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.scContent)).EndInit();
             this.scContent.ResumeLayout(false);
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,6 +298,7 @@
         private System.Windows.Forms.ToolStripMenuItem miOpenTranslateFile;
         private System.Windows.Forms.ListView lvBaseList;
         private System.Windows.Forms.ListView lvTranslateList;
+        private System.Windows.Forms.ToolStripStatusLabel statusLabel;
     }
 }
 

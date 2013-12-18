@@ -88,7 +88,7 @@ namespace I18nIt
             return true;
         }
 
-        public void SaveTo()
+        public void Save()
         {
             var type = DecideResourceType(_loadedFile);
             switch (type)
@@ -104,12 +104,42 @@ namespace I18nIt
 
         private void SaveMpResource(string loadedFile)
         {
-            
+            var xmlDocument = new XmlDocument();
+            xmlDocument.Load(loadedFile);
+            DeleteIfExists(loadedFile);
+            foreach (var resource in _resourceStringsDictionary)
+            {
+                var queryString = String.Format("//DisplayString[@ElementID='{0}']/Name", resource.Key);
+                var targetNode = xmlDocument.SelectSingleNode(queryString);
+                if (targetNode != null)
+                {
+                    targetNode.InnerText = resource.Value;
+                }
+            }
+
+            xmlDocument.Save(loadedFile);
         }
 
         private void SaveJavaResource(string loadedFile)
         {
-            
+            DeleteIfExists(loadedFile);
+
+            using (var stringWriter = new StreamWriter(loadedFile, true, Encoding.UTF8))
+            {
+                foreach (var resource in _resourceStringsDictionary)
+                {
+                    stringWriter.WriteLine(@"{0}={1}", resource.Key, resource.Value);
+                }
+            }
+        }
+
+        private static void DeleteIfExists(string loadedFile)
+        {
+            var fileInfo = new FileInfo(loadedFile);
+            if (fileInfo.Exists)
+            {
+                fileInfo.Delete();
+            }
         }
     }
 }
