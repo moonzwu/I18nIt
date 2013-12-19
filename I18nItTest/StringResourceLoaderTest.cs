@@ -38,7 +38,7 @@ namespace I18nItTest
             var result = stringResourceLoader.LoadFile(mpResource);
             Assert.IsTrue(result);
             Assert.AreEqual(1, stringResourceLoader.ResourceStringsDictionary.Count);
-            Assert.AreEqual("Enum.843e5d2b2f3941d882c6a5f4834e19a3", stringResourceLoader.ResourceStringsDictionary.Keys.First());
+            Assert.AreEqual("Enum.843e5d2b2f3941d882c6a5f4834e19a3$HostName", stringResourceLoader.ResourceStringsDictionary.Keys.First());
         }
 
         [TestMethod]
@@ -61,12 +61,12 @@ namespace I18nItTest
             var path = CopyToTempFolder("resource/mpresource.mpx");
             var stringResourceLoader = new StringResourceLoader();
             stringResourceLoader.LoadFile(path);
-            stringResourceLoader.ResourceStringsDictionary["Enum.843e5d2b2f3941d882c6a5f4834e19a3"] = "new text";
+            stringResourceLoader.ResourceStringsDictionary["Enum.843e5d2b2f3941d882c6a5f4834e19a3$HostName"] = "new text";
             stringResourceLoader.Save();
 
             var newStringResourceLoader = new StringResourceLoader();
             newStringResourceLoader.LoadFile(path);
-            Assert.AreEqual("new text", newStringResourceLoader.ResourceStringsDictionary["Enum.843e5d2b2f3941d882c6a5f4834e19a3"]);
+            Assert.AreEqual("new text", newStringResourceLoader.ResourceStringsDictionary["Enum.843e5d2b2f3941d882c6a5f4834e19a3$HostName"]);
         }
 
         private String CopyToTempFolder(string fileName)

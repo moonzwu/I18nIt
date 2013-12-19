@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace I18nIt
@@ -7,8 +9,8 @@ namespace I18nIt
     {
         private const int FixPading = 5;
         private string _baseFileName = "";
-        private string _translateFileName = "";
         private PersistenceSync _sync;
+        private string _translateFileName = "";
 
         public MainForm()
         {
@@ -40,7 +42,6 @@ namespace I18nIt
             lvTranslateList.Columns.Add(ch2);
 
             _sync = new PersistenceSync();
-            _sync.BindToLabel(statusLabel);
         }
 
         private void miOpenTranslateFile_Click(object sender, EventArgs e)
@@ -96,7 +97,7 @@ namespace I18nIt
                 if (listViewItems.Length > 0)
                 {
                     translateList.SelectedItems.Clear();
-                    var selectedItem = listViewItems[0];
+                    ListViewItem selectedItem = listViewItems[0];
                     selectedItem.Selected = true;
                     selectedItem.EnsureVisible();
                 }
@@ -122,14 +123,65 @@ namespace I18nIt
 
         private static void UpdateToCache(object sender, LabelEditEventArgs e, string fileName)
         {
-            var stringResourceCache = StringResourceCache.GetInstance();
+            StringResourceCache stringResourceCache = StringResourceCache.GetInstance();
             var listView = (ListView) sender;
             stringResourceCache.Update(fileName, listView.FocusedItem.Name, e.Label);
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-           _sync.SaveAll();
+            _sync.SaveAll();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            _sync.SaveAll();
+            lvBaseList.Items.Clear();
+            lvTranslateList.Items.Clear();
+            StringResourceCache.GetInstance().Clear();
+        }
+
+        private void updateToolStripTimer_Tick(object sender, EventArgs e)
+        {
+            statusLabel.Text = _sync.StatusLabel;
+        }
+
+        private void findToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var searchForm = new SearchForm();
+            var dialogResult = searchForm.ShowDialog();
+            if (dialogResult == DialogResult.OK)
+            {
+                if (String.IsNullOrEmpty(searchForm.SearchKeyword)) return;
+
+                SearchKeyword(searchForm.SearchKeyword,
+                    searchForm.IsSearchingInTranslateFile ? lvTranslateList : lvBaseList);
+            }
+        }
+
+        private static void SearchKeyword(string keyword, ListView targetList)
+        {
+            foreach (
+                var item in targetList.Items.Cast<ListViewItem>().Where(item => item.Text.Contains(keyword)))
+            {
+                item.BackColor = Color.Aquamarine;
+            }
+        }
+
+        private void MainForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode != Keys.Escape) return;
+
+            ResetBackColor(lvBaseList);
+            ResetBackColor(lvTranslateList);
+        }
+
+        private static void ResetBackColor(ListView targetList)
+        {
+            foreach (ListViewItem item in targetList.Items)
+            {
+                item.BackColor = targetList.BackColor;
+            }
         }
     }
 }

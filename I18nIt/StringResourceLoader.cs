@@ -80,9 +80,12 @@ namespace I18nIt
                 if (stringNode.Attributes == null) continue;
                 
                 var key = stringNode.Attributes["ElementID"];
-                var text = stringNode.SelectSingleNode("//Name");
+                var subkey = stringNode.Attributes["SubElementID"];
+                var text = stringNode.FirstChild;
                 if (text != null) {  
-                    ResourceStringsDictionary.Add(key.Value, text.InnerText);
+                    ResourceStringsDictionary.Add(
+                        subkey != null ? key.Value + "$" + subkey.Value : key.Value,
+                        text.InnerText);
                 }
             }
             return true;
@@ -109,7 +112,11 @@ namespace I18nIt
             DeleteIfExists(loadedFile);
             foreach (var resource in _resourceStringsDictionary)
             {
-                var queryString = String.Format("//DisplayString[@ElementID='{0}']/Name", resource.Key);
+                var keys = resource.Key.Split('$');
+                var queryString = keys.Length > 1 
+                    ? String.Format("//DisplayString[@ElementID='{0}'][@SubElementID='{1}']/Name", keys[0], keys[1]) 
+                    : String.Format("//DisplayString[@ElementID='{0}']/Name", resource.Key);
+
                 var targetNode = xmlDocument.SelectSingleNode(queryString);
                 if (targetNode != null)
                 {

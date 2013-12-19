@@ -38,5 +38,13 @@ namespace I18nIt
                 }    
             }
         }
+
+        public void Clear()
+        {
+            lock (cache)
+            {
+                cache.Clear();
+            }
+        }
     }
 }

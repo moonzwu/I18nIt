@@ -1,21 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Timers;
-using System.Windows.Forms;
-using Timer = System.Timers.Timer;
 
 namespace I18nIt
 {
     public class PersistenceSync
     {
-        private ToolStripStatusLabel _label;
+        public string StatusLabel { get; private set; }
 
         public PersistenceSync()
         {
-            var timer = new Timer(15000);
-            timer.Elapsed += new ElapsedEventHandler(Sync);
+            var timer = new Timer(30000);
+            timer.Elapsed += Sync;
             timer.AutoReset = true;
             timer.Enabled = true;
         }
@@ -23,15 +20,7 @@ namespace I18nIt
         private void Sync(object source, ElapsedEventArgs e)
         {
             SaveAll();
-            if (_label != null)
-            {
-                _label.Text = String.Format("File has been saved at {0}", DateTime.Now.ToLocalTime());
-            }
-        }
-
-        public void BindToLabel(ToolStripStatusLabel label)
-        {
-            _label = label;
+            
         }
 
         public void SaveAll()
@@ -43,7 +32,8 @@ namespace I18nIt
                 foreach (var loader in allKeys.Select(cache.GetResourceLoader))
                 {
                     loader.Save();
-                }                
+                    StatusLabel = String.Format("File has been saved at {0}", DateTime.Now.ToLocalTime());
+                }
             }
         }
     }
