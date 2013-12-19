@@ -170,10 +170,16 @@ namespace I18nIt
 
         private void MainForm_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode != Keys.Escape) return;
+            if (e.Control && e.KeyCode == Keys.F)
+            {
+                findToolStripMenuItem_Click(sender, e);
+            }
 
-            ResetBackColor(lvBaseList);
-            ResetBackColor(lvTranslateList);
+            if (e.KeyCode == Keys.Escape)
+            {
+                ResetBackColor(lvBaseList);
+                ResetBackColor(lvTranslateList);
+            }
         }
 
         private static void ResetBackColor(ListView targetList)

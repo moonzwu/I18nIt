@@ -49,5 +49,13 @@ namespace I18nIt
         {
             ckbInRight.Checked = IsSearchingInTranslateFile;
         }
+
+        private void SearchForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                btnCanncel_Click(sender, e);
+            }
+        }
     }
 }
