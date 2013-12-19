@@ -40,6 +40,7 @@ namespace I18nIt
             lvTranslateList.Columns.Add(ch2);
 
             _sync = new PersistenceSync();
+            _sync.BindToLabel(statusLabel);
         }
 
         private void miOpenTranslateFile_Click(object sender, EventArgs e)
@@ -55,6 +56,7 @@ namespace I18nIt
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            _sync.SaveAll();
             Application.Exit();
         }
 
@@ -123,6 +125,11 @@ namespace I18nIt
             var stringResourceCache = StringResourceCache.GetInstance();
             var listView = (ListView) sender;
             stringResourceCache.Update(fileName, listView.FocusedItem.Name, e.Label);
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+           _sync.SaveAll();
         }
     }
 }

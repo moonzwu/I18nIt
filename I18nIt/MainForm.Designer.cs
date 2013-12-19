@@ -32,7 +32,6 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miOpenBaseFile = new System.Windows.Forms.ToolStripMenuItem();
             this.miOpenTranslateFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,7 +74,6 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miOpenBaseFile,
             this.miOpenTranslateFile,
-            this.saveAsToolStripMenuItem,
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -95,12 +93,6 @@
             this.miOpenTranslateFile.Size = new System.Drawing.Size(188, 22);
             this.miOpenTranslateFile.Text = "Open Translate File";
             this.miOpenTranslateFile.Click += new System.EventHandler(this.miOpenTranslateFile_Click);
-            // 
-            // saveAsToolStripMenuItem
-            // 
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.saveAsToolStripMenuItem.Text = "Save as ...";
             // 
             // toolStripSeparator1
             // 
@@ -125,7 +117,7 @@
             // findToolStripMenuItem
             // 
             this.findToolStripMenuItem.Name = "findToolStripMenuItem";
-            this.findToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.findToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.findToolStripMenuItem.Text = "Find Replace";
             // 
             // validationToolStripMenuItem
@@ -262,6 +254,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "I18nIt";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menubar.ResumeLayout(false);
             this.menubar.PerformLayout();
@@ -281,7 +274,6 @@
         private System.Windows.Forms.MenuStrip menubar;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem miOpenBaseFile;
-        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
