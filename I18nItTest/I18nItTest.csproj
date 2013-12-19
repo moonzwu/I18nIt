@@ -74,6 +74,7 @@
     <Compile Include="ResourceLineValidatorTest.cs" />
     <Compile Include="StringResourceCacheTest.cs" />
     <Compile Include="StringResourceLoaderTest.cs" />
+    <Compile Include="ChineseValidaterTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\I18nIt\I18nIt.csproj">

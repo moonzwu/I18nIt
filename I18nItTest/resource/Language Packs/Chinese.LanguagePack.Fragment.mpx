@@ -1,8 +1,7 @@
-﻿<ManagementPackFragment SchemaVersion="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<ManagementPackFragment SchemaVersion="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <LanguagePacks>
     <LanguagePack ID="CHS" IsDefault="false">
       <DisplayStrings>
-
         <DisplayString ElementID="Lenovo.TMM.Server">
           <Name>Lenovo TMM Server</Name>
           <Description>
@@ -14,78 +13,75 @@
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Host.Class">
           <Name>主机</Name>
           <!--Host Tasks -->
-          <Description></Description>
+          <Description>
+          </Description>
         </DisplayString>
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Host.Class" SubElementID="HostName">
           <Name>主机</Name>
-          <Description></Description>
+          <Description>
+          </Description>
         </DisplayString>
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Host.Class" SubElementID="BMCIP">
           <Name>TMM IPV4</Name>
-          <Description></Description>
+          <Description>
+          </Description>
         </DisplayString>
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Host.Relationship">
           <Name>主机 Relationship</Name>
-          <Description></Description>
+          <Description>
+          </Description>
         </DisplayString>
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Host.Discovery">
           <Name>主机 Discovery</Name>
           <Description>描述 for the new discovery.</Description>
         </DisplayString>
-        <DisplayString  ElementID ="Lenovo.TMM.Server.MP.Host.LaunchTMM.ConsoleTask">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Host.LaunchTMM.ConsoleTask">
           <Name>启动 TMM</Name>
           <Description>启动 TMM</Description>
         </DisplayString>
-
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Host.Root">
           <Name>主机操作</Name>
           <!--Host-->
-          <Description></Description>
+          <Description>
+          </Description>
         </DisplayString>
-
-        <DisplayString  ElementID ="Lenovo.TMM.Server.MP.Host.RDP.ConsoleTask">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Host.RDP.ConsoleTask">
           <Name>启动主机远程桌面控制台</Name>
           <Description>启动主机远程桌面控制台</Description>
           <!--Launch Host RDP Console -->
         </DisplayString>
-
-
-        <DisplayString  ElementID ="Lenovo.TMM.Server.MP.Host.Restart.ConsoleTask">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Host.Restart.ConsoleTask">
           <Name>重新启动服务器</Name>
           <!--Restart-->
           <Description>重新启动服务器</Description>
           <!--Restart-->
         </DisplayString>
-
-        <DisplayString  ElementID ="Lenovo.TMM.Server.MP.Host.Shutdown.ConsoleTask">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Host.Shutdown.ConsoleTask">
           <Name>关闭服务器</Name>
           <Description>关闭服务器</Description>
         </DisplayString>
-
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Host.View">
           <Name>主机</Name>
           <Description>描述 for the new view</Description>
           <!--Description  for the new view-->
         </DisplayString>
-
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.BaseboardClass">
           <Name>主板</Name>
           <!--System Board-->
           <!--Chinese equivallent pasted as Inventory Information-->
-          <Description></Description>
+          <Description>
+          </Description>
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.BaseboardClass"
-                       SubElementID="Manufacturer">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.BaseboardClass" SubElementID="Manufacturer">
           <Name>主板制造商</Name>
           <!--System Board Manufacturer-->
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.BaseboardClass"
-                       SubElementID="ProductName">
-          <Name>服务器型号</Name>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.BaseboardClass" SubElementID="ProductName">
+          <Name>
+          </Name>
           <!--Server Model-->
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.BaseboardClass"
-                       SubElementID="SerialNumber">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.BaseboardClass" SubElementID="SerialNumber">
           <Name>序列号</Name>
           <!--Serial Number-->
         </DisplayString>
@@ -93,45 +89,39 @@
           <Name>UUID</Name>
           <!--UUID-->
         </DisplayString>
-
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Fan.Class">
           <Name>风扇</Name>
           <!--Fan-->
-          <Description></Description>
+          <Description>
+          </Description>
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Fan.Class"
-                       SubElementID="RotationalSpeed">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Fan.Class" SubElementID="RotationalSpeed">
           <Name>转速(RPM)</Name>
           <!--Rotational Speed-->
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Fan.Class"
-                       SubElementID="CurrentState">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Fan.Class" SubElementID="CurrentState">
           <Name>状态</Name>
           <!--Status-->
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Fan.Class"
-                       SubElementID="Description">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Fan.Class" SubElementID="Description">
           <Name>描述</Name>
           <!--Description-->
         </DisplayString>
-
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Memory.Class">
           <Name>内存</Name>
           <!--Memory-->
-          <Description></Description>
+          <Description>
+          </Description>
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Memory.Class"
-                       SubElementID="Manufacturer">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Memory.Class" SubElementID="Manufacturer">
           <Name>每个DIMM的制造商</Name>
           <!--Manufacturer of each DIMM-->
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Memory.Class"
-                       SubElementID="MemoryType">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Memory.Class" SubElementID="MemoryType">
           <Name>每个DIMM的类型</Name>
           <!--Type of each DIMM-->
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Memory.Class"
-                       SubElementID="DeviceLocator">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Memory.Class" SubElementID="DeviceLocator">
           <Name>每个DIMM的位置</Name>
           <!--Location of each DIMM-->
         </DisplayString>
@@ -139,174 +129,146 @@
           <Name>每个DIMM的容量(MB)</Name>
           <!--Capacity of each DIMM (MB)-->
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Memory.Class"
-                       SubElementID="SerialNumber">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Memory.Class" SubElementID="SerialNumber">
           <Name>每个DIMM的序列号</Name>
           <!--Serial Number for each DIMM -->
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Memory.Class"
-                       SubElementID="PartNumber">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Memory.Class" SubElementID="PartNumber">
           <Name>每个DIMM的部件号</Name>
           <!--Part Number for each DIMM-->
-        </DisplayString>       
-
+        </DisplayString>
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Class">
           <Name>处理器</Name>
           <!--Processor-->
-          <Description></Description>
+          <Description>
+          </Description>
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Class"
-                       SubElementID="Manufacturer">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Class" SubElementID="Manufacturer">
           <Name>处理器制造商</Name>
           <!--Processor Manufacturer-->
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Class"
-                       SubElementID="ModelName">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Class" SubElementID="ModelName">
           <Name>型号名称</Name>
           <!--Model Name-->
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Class"
-                       SubElementID="Speed">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Class" SubElementID="Speed">
           <Name>速度(GHz)</Name>
           <!--Speed(GHz)-->
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Class"
-                       SubElementID="SocketNumber">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Class" SubElementID="SocketNumber">
           <Name>插槽号</Name>
           <!--Socket Number-->
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Class"
-                       SubElementID="NumberOfLogicalProcessors">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Class" SubElementID="NumberOfLogicalProcessors">
           <Name>逻辑处理器数</Name>
           <!--Number Of Logical Processors-->
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Class"
-                       SubElementID="NumberOfCores">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Class" SubElementID="NumberOfCores">
           <Name>核心数</Name>
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Class"
-                       SubElementID="L2CacheSize">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Class" SubElementID="L2CacheSize">
           <Name>L2高速缓存大小(MB)</Name>
           <!-- Cache Size (MB) -->
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Class"
-                       SubElementID="L3CacheSize">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Class" SubElementID="L3CacheSize">
           <Name>L3高速缓存大小(MB)</Name>
           <!--L3 Cache Size (MB)-->
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Class"
-                       SubElementID="ProcessorStatus">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Class" SubElementID="ProcessorStatus">
           <Name>状态</Name>
           <!--Status-->
         </DisplayString>
-
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.ServerInfo.Class">
           <Name>服务器信息</Name>
           <!--Server Information-->
-          <Description></Description>
+          <Description>
+          </Description>
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.ServerInfo.Class"
-                       SubElementID="HostOSVersion">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.ServerInfo.Class" SubElementID="HostOSVersion">
           <Name>操作系统版本</Name>
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.ServerInfo.Class"
-                       SubElementID="NumberOfVMs">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.ServerInfo.Class" SubElementID="NumberOfVMs">
           <Name>虚拟机数</Name>
           <!--Number of VMs-->
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.ServerInfo.Class"
-                       SubElementID="BIOSVersion">
-          <Name>BIOS 版本</Name>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.ServerInfo.Class" SubElementID="BIOSVersion">
+          <Name>
+          </Name>
           <!--BIOS Version-->
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.ServerInfo.Class"
-                       SubElementID="NoOfThreads">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.ServerInfo.Class" SubElementID="NoOfThreads">
           <Name>线程数</Name>
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.ServerInfo.Class"
-                       SubElementID="NoOfProcessors">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.ServerInfo.Class" SubElementID="NoOfProcessors">
           <Name>处理器数</Name>
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.ServerInfo.Class"
-                       SubElementID="NoOfCores">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.ServerInfo.Class" SubElementID="NoOfCores">
           <Name>核心数</Name>
         </DisplayString>
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.TemperatureSensor.Class">
           <Name>温度传感器</Name>
           <!--Temperature Sensor-->
-          <Description></Description>
+          <Description>
+          </Description>
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.TemperatureSensor.Class"
-                       SubElementID="CurrentTemperature">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.TemperatureSensor.Class" SubElementID="CurrentTemperature">
           <Name>当前温度(摄氏度)</Name>
           <!--Current Temperature (Degree C)-->
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.TemperatureSensor.Class"
-                       SubElementID="UpperThresholdCriticalTemperature">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.TemperatureSensor.Class" SubElementID="UpperThresholdCriticalTemperature">
           <Name>关键温度阈值上限(摄氏度)</Name>
           <!--Upper Threshold Critical Temperature (Degree C)-->
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.TemperatureSensor.Class"
-                       SubElementID="UpperThresholdFatalTemperature">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.TemperatureSensor.Class" SubElementID="UpperThresholdFatalTemperature">
           <Name>致命温度阈值上限(摄氏度)</Name>
           <!--Upper Threshold Fatal Temperature (Degree C)-->
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.TemperatureSensor.Class"
-                       SubElementID="UpperThresholdNonCriticalTemperature">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.TemperatureSensor.Class" SubElementID="UpperThresholdNonCriticalTemperature">
           <Name>非关键温度阈值上限(摄氏度)</Name>
           <!--Upper Threshold Non Critical Temperature (Degree C)-->
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.TemperatureSensor.Class"
-                       SubElementID="Description">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.TemperatureSensor.Class" SubElementID="Description">
           <Name>描述</Name>
           <!--Description-->
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.TemperatureSensor.Class"
-                       SubElementID="TempSensorName">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.TemperatureSensor.Class" SubElementID="TempSensorName">
           <Name>温度传感器名称</Name>
           <!--Temperature Sensor Name-->
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.TemperatureSensor.Class"
-                       SubElementID="CurrentState">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.TemperatureSensor.Class" SubElementID="CurrentState">
           <Name>状态</Name>
           <!--Status-->
         </DisplayString>
-
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Baseboard.Discovery">
           <Name>Baseboard Discovery</Name>
           <!--Baseboard Discovery-->
           <Description>描述 for the new discovery.</Description>
           <!--Description for the new discovery.-->
         </DisplayString>
-
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Fan.Discovery">
           <Name>风扇 Discovery</Name>
           <!--Fan Discovery-->
           <Description>描述 for the new discovery.</Description>
           <!--Description for the new discovery.-->
         </DisplayString>
-
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Memory.Discovery">
           <Name>内存 Discovery</Name>
           <!--Memory Discovery-->
           <Description>描述 for the new discovery.</Description>
           <!--Description for the new discovery.-->
         </DisplayString>
-
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Processor.Discovery">
           <Name>处理器 Discovery</Name>
           <!--Processor Discovery-->
           <Description>描述 for the new discovery.</Description>
           <!--Description for the new discovery.-->
         </DisplayString>
-
         <DisplayString ElementID="Lenovo.TMM.Server.MP.ServerInfoDiscovery">
           <Name>服务器信息 Discovery</Name>
           <!--ServerInfo Discovery-->
           <Description>描述 for the new discovery.</Description>
           <!--Description for the new discovery.-->
         </DisplayString>
-
         <DisplayString ElementID="Lenovo.TMM.Server.MP.TemperatureSensor.Discovery">
           <Name>温度传感器 Discovery</Name>
           <!--TemperatureSensor Discovery-->
@@ -343,8 +305,7 @@
           <Description>描述 for the new unit monitor.</Description>
           <!--Description for the new unit monitor.-->
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.MemoryUnitMonitor"
-                       SubElementID="UnderThreshold">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.MemoryUnitMonitor" SubElementID="UnderThreshold">
           <Name>UnderThreshold</Name>
           <!--UnderThreshold-->
           <Description>UnderThreshold</Description>
@@ -356,155 +317,149 @@
           <Description>OverThreshold</Description>
           <!--OverThreshold-->
         </DisplayString>
-
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Processor.UnitMonitor">
           <Name>处理器 Unit Monitor</Name>
           <!--Processor Unit Monitor-->
           <Description>描述 for the new unit monitor.</Description>
           <!--Description for the new unit monitor.-->
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Processor.UnitMonitor"
-                       SubElementID="UnderThreshold">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Processor.UnitMonitor" SubElementID="UnderThreshold">
           <Name>UnderThreshold</Name>
           <!--UnderThreshold-->
           <Description>UnderThreshold</Description>
           <!--UnderThreshold-->
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.Processor.UnitMonitor"
-                       SubElementID="OverThreshold">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Processor.UnitMonitor" SubElementID="OverThreshold">
           <Name>OverThreshold</Name>
           <!--OverThreshold-->
           <Description>OverThreshold</Description>
           <!--OverThreshold-->
         </DisplayString>
-
         <DisplayString ElementID="Lenovo.TMM.Server.MP.TemperatureSensor.UnitMonitor">
           <Name>TemperatureSensor Unit Monitor</Name>
           <!--TemperatureSensor Unit Monitor-->
           <Description>描述 for the new unit monitor.</Description>
           <!--Description for the new unit monitor.-->
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.TemperatureSensor.UnitMonitor"
-                       SubElementID="Success">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.TemperatureSensor.UnitMonitor" SubElementID="Success">
           <Name>Success</Name>
           <!--Success-->
           <Description>Success</Description>
           <!--Success-->
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.TemperatureSensor.UnitMonitor"
-                       SubElementID="Warning">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.TemperatureSensor.UnitMonitor" SubElementID="Warning">
           <Name>警告</Name>
           <!--Warning-->
           <Description>警告</Description>
           <!--Warning-->
         </DisplayString>
-        <DisplayString ElementID="Lenovo.TMM.Server.MP.TemperatureSensor.UnitMonitor"
-                       SubElementID="Critical">
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.TemperatureSensor.UnitMonitor" SubElementID="Critical">
           <Name>关键</Name>
           <!--Critical-->
           <Description>关键</Description>
           <!--Critical-->
         </DisplayString>
-
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Root">
           <Name>Lenovo TMM</Name>
           <!--Lenovo TMM-->
-          <Description></Description>
+          <Description>
+          </Description>
         </DisplayString>
         <DisplayString ElementID="Lenovo.TMM.Server.MP.AgentServers.Root">
           <Name>Lenovo Agent Servers</Name>
           <!--Lenovo Agent Servers-->
-          <Description></Description>
+          <Description>
+          </Description>
         </DisplayString>
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Root">
           <Name>资产</Name>
           <!--Inventory-->
-          <Description></Description>
+          <Description>
+          </Description>
         </DisplayString>
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Relationship">
           <Name>处理器 Relationship</Name>
           <!--Processor Relationship-->
-          <Description></Description>
+          <Description>
+          </Description>
         </DisplayString>
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Memory.Relationship">
           <Name>Memory Relationship</Name>
           <!--Memory Relationship-->
-          <Description></Description>
+          <Description>
+          </Description>
         </DisplayString>
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Fan.Relationship">
           <Name>风扇 Relationship</Name>
           <!--Fan Relationship-->
-          <Description></Description>
+          <Description>
+          </Description>
         </DisplayString>
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.TemperatureSensor.Relationship">
           <Name>温度传感器 Relationship</Name>
           <!--Temperature Sensor Relationship-->
-          <Description></Description>
+          <Description>
+          </Description>
         </DisplayString>
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Baseboard.Relationship">
           <Name>Baseboard Relationship</Name>
           <!--Baseboard Relationship-->
-          <Description></Description>
+          <Description>
+          </Description>
         </DisplayString>
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.ServerInfo.Relationship">
           <Name>服务器信息 Relationship</Name>
           <!--ServerInfo Relationship-->
-          <Description></Description>
+          <Description>
+          </Description>
         </DisplayString>
-
         <DisplayString ElementID="Lenovo.TMM.Server.MP.BaseboardView">
           <Name>主板</Name>
           <!--System Board-->
           <Description>描述 for the new view</Description>
           <!--Description for the new view-->
         </DisplayString>
-
         <DisplayString ElementID="Lenovo.TMM.Server.MP.FanView">
           <Name>风扇</Name>
           <!--Fans-->
           <Description>Description for the new view</Description>
           <!--Description for the new view-->
         </DisplayString>
-
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Memory.View">
           <Name>内存</Name>
           <!--Memory-->
           <Description>描述 for the new view</Description>
           <!--Description for the new view-->
         </DisplayString>
-
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Processor.View">
           <Name>处理器</Name>
           <!--Processors-->
           <Description>描述 for the new view</Description>
           <!--Description for the new view-->
         </DisplayString>
-
         <DisplayString ElementID="Lenovo.TMM.Server.MP.ServerInfo.View">
           <Name>服务器信息</Name>
           <!--Server Information-->
           <Description>描述 for the new view</Description>
           <!--Description for the new view-->
         </DisplayString>
-
         <DisplayString ElementID="Lenovo.TMM.Server.MP.TemperatureSensor.View">
           <Name>温度传感器</Name>
           <!--Temperature Sensors-->
           <Description>描述 for the new view</Description>
           <!--Description for the new view-->
         </DisplayString>
-
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Seed.Discovery">
           <Name>Seed Discovery</Name>
           <!--Seed Discovery-->
           <Description>描述 for the new discovery.</Description>
           <!--Description for the new discovery.-->
         </DisplayString>
-
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Seed.Class">
           <Name>Seed Class</Name>
           <!--Seed Class-->
-          <Description></Description>
+          <Description>
+          </Description>
         </DisplayString>
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Seed.Class" SubElementID="Model">
           <Name>型号</Name>

@@ -189,5 +189,19 @@ namespace I18nIt
                 item.BackColor = targetList.BackColor;
             }
         }
+
+        private void checkToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_translateFileName.ToLower().Contains("chinese"))
+            {
+                var chineseValidater = new ChineseValidater();
+                var stringResourceLoader = StringResourceCache.GetInstance().GetResourceLoader(_translateFileName);
+                var errorList = chineseValidater.CheckDelimiter(stringResourceLoader.ResourceStringsDictionary);
+                foreach (var item in lvTranslateList.Items.Cast<ListViewItem>().Where(item => errorList.Contains(item.Name)))
+                {
+                    item.BackColor = Color.Red;
+                }
+            }
+        }
     }
 }

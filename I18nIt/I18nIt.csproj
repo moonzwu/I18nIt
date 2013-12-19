@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChineseValidater.cs" />
     <Compile Include="FileMenu.cs" />
     <Compile Include="SearchForm.cs">
       <SubType>Form</SubType>
