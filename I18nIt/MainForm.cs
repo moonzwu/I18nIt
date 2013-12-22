@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -149,7 +150,7 @@ namespace I18nIt
         private void findToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var searchForm = new SearchForm();
-            var dialogResult = searchForm.ShowDialog();
+            DialogResult dialogResult = searchForm.ShowDialog();
             if (dialogResult == DialogResult.OK)
             {
                 if (String.IsNullOrEmpty(searchForm.SearchKeyword)) return;
@@ -162,7 +163,7 @@ namespace I18nIt
         private static void SearchKeyword(string keyword, ListView targetList)
         {
             foreach (
-                var item in targetList.Items.Cast<ListViewItem>().Where(item => item.Text.Contains(keyword)))
+                ListViewItem item in targetList.Items.Cast<ListViewItem>().Where(item => item.Text.Contains(keyword)))
             {
                 item.BackColor = Color.Aquamarine;
             }
@@ -192,15 +193,37 @@ namespace I18nIt
 
         private void checkToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            var stringResourceLoader =
+                StringResourceCache.GetInstance().GetResourceLoader(_translateFileName);
             if (_translateFileName.ToLower().Contains("chinese"))
             {
                 var chineseValidater = new ChineseValidater();
-                var stringResourceLoader = StringResourceCache.GetInstance().GetResourceLoader(_translateFileName);
                 var errorList = chineseValidater.CheckDelimiter(stringResourceLoader.ResourceStringsDictionary);
-                foreach (var item in lvTranslateList.Items.Cast<ListViewItem>().Where(item => errorList.Contains(item.Name)))
+                foreach (
+                    var item in
+                        lvTranslateList.Items.Cast<ListViewItem>().Where(item => errorList.Contains(item.Name)))
                 {
                     item.BackColor = Color.Red;
                 }
+            }
+        }
+
+        private void checkUpcaselowcaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CheckSentenceOnLanguage(_translateFileName, lvTranslateList);
+            CheckSentenceOnLanguage(_baseFileName, lvBaseList);
+        }
+
+        private void CheckSentenceOnLanguage(string fileName, ListView viewList)
+        {
+            var stringResourceLoader =
+                StringResourceCache.GetInstance().GetResourceLoader(fileName);
+            var baseValidater = new BaseValidater();
+            var errorList = baseValidater.CheckSentence(stringResourceLoader.ResourceStringsDictionary);
+            foreach (
+                var item in viewList.Items.Cast<ListViewItem>().Where(item => errorList.Contains(item.Name)))
+            {
+                item.BackColor = Color.Red;
             }
         }
     }

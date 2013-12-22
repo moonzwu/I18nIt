@@ -5,12 +5,14 @@ using System.Text;
 
 namespace I18nIt
 {
-    public class ChineseValidater
+    public class ChineseValidater : BaseValidater
     {
         public List<string> CheckDelimiter(IDictionary<string, string> sourceDictionary)
         {
-            var errorStrings = (from keyval in sourceDictionary where keyval.Value.Contains(" ") select keyval.Key).ToList();
-            return errorStrings;
-        } 
+            var errorBracketPair = base.CheckBracketPair(sourceDictionary);
+            var errorWhitespace = (from keyval in sourceDictionary 
+                                where keyval.Value.Contains(" ") select keyval.Key).ToList();
+            return errorWhitespace.Union(errorBracketPair).ToList();
+        }
     }
 }
