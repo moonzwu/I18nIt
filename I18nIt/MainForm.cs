@@ -88,19 +88,20 @@ namespace I18nIt
             EditText(lvTranslateList);
         }
 
-        private static void CascadingSelected(ListView baseList, ListView translateList)
+        private void CascadingSelected(ListView baseList, ListView translateList)
         {
-            ListView.SelectedListViewItemCollection selectedItems = baseList.SelectedItems;
+            var selectedItems = baseList.SelectedItems;
             if (selectedItems.Count != 0)
             {
                 string name = selectedItems[0].Name;
-                ListViewItem[] listViewItems = translateList.Items.Find(name, true);
+                var listViewItems = translateList.Items.Find(name, true);
                 if (listViewItems.Length > 0)
                 {
                     translateList.SelectedItems.Clear();
-                    ListViewItem selectedItem = listViewItems[0];
+                    var selectedItem = listViewItems[0];
                     selectedItem.Selected = true;
                     selectedItem.EnsureVisible();
+                    toolStripId.Text = String.Format(" ID: {0}", name);
                 }
             }
         }
@@ -108,7 +109,7 @@ namespace I18nIt
         private static void EditText(ListView lv)
         {
             lv.LabelEdit = true;
-            ListViewItem selectedItem = lv.SelectedItems[0];
+            var selectedItem = lv.SelectedItems[0];
             selectedItem.BeginEdit();
         }
 

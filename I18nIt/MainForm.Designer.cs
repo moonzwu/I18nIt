@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menubar = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miOpenBaseFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,6 +52,7 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.updateToolStripTimer = new System.Windows.Forms.Timer(this.components);
+            this.toolStripId = new System.Windows.Forms.ToolStripStatusLabel();
             this.menubar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scContent)).BeginInit();
             this.scContent.Panel1.SuspendLayout();
@@ -188,7 +190,7 @@
             // 
             this.scContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.scContent.Location = new System.Drawing.Point(0, 28);
-            this.scContent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.scContent.Margin = new System.Windows.Forms.Padding(4);
             this.scContent.Name = "scContent";
             // 
             // scContent.Panel1
@@ -214,7 +216,7 @@
             this.lvBaseList.HideSelection = false;
             this.lvBaseList.LabelEdit = true;
             this.lvBaseList.Location = new System.Drawing.Point(0, 0);
-            this.lvBaseList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lvBaseList.Margin = new System.Windows.Forms.Padding(4);
             this.lvBaseList.Name = "lvBaseList";
             this.lvBaseList.Size = new System.Drawing.Size(373, 589);
             this.lvBaseList.TabIndex = 0;
@@ -234,7 +236,7 @@
             this.lvTranslateList.HideSelection = false;
             this.lvTranslateList.LabelEdit = true;
             this.lvTranslateList.Location = new System.Drawing.Point(0, 0);
-            this.lvTranslateList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lvTranslateList.Margin = new System.Windows.Forms.Padding(4);
             this.lvTranslateList.Name = "lvTranslateList";
             this.lvTranslateList.Size = new System.Drawing.Size(747, 589);
             this.lvTranslateList.TabIndex = 1;
@@ -247,7 +249,8 @@
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.statusLabel});
+            this.statusLabel,
+            this.toolStripId});
             this.statusStrip.Location = new System.Drawing.Point(0, 617);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
@@ -259,13 +262,24 @@
             // statusLabel
             // 
             this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(0, 17);
+            this.statusLabel.Size = new System.Drawing.Size(0, 20);
             // 
             // updateToolStripTimer
             // 
             this.updateToolStripTimer.Enabled = true;
             this.updateToolStripTimer.Interval = 1500;
             this.updateToolStripTimer.Tick += new System.EventHandler(this.updateToolStripTimer_Tick);
+            // 
+            // toolStripId
+            // 
+            this.toolStripId.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.toolStripId.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripId.Margin = new System.Windows.Forms.Padding(10, 3, 0, 2);
+            this.toolStripId.Name = "toolStripId";
+            this.toolStripId.Size = new System.Drawing.Size(4, 19);
+            this.toolStripId.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // MainForm
             // 
@@ -276,9 +290,10 @@
             this.Controls.Add(this.menubar);
             this.Controls.Add(this.statusStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MainMenuStrip = this.menubar;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "I18nIt";
@@ -322,6 +337,7 @@
         private System.Windows.Forms.ToolStripStatusLabel statusLabel;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.Timer updateToolStripTimer;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripId;
     }
 }
 
