@@ -122,9 +122,41 @@ namespace I18nIt
                 {
                     targetNode.InnerText = resource.Value;
                 }
+                else
+                {
+                    AddNewDisplayStringElement(xmlDocument, keys, resource);
+                }
             }
 
             xmlDocument.Save(loadedFile);
+        }
+
+        private static void AddNewDisplayStringElement(XmlDocument xmlDocument, IList<string> keys, KeyValuePair<string, string> resource)
+        {
+            var newDisplayString = xmlDocument.CreateNode(XmlNodeType.Element, "DisplayString", null);
+            var elementId = xmlDocument.CreateAttribute("ElementID");
+            elementId.Value = keys[0];
+            if (newDisplayString.Attributes != null)
+            {
+                newDisplayString.Attributes.Append(elementId);
+            }
+
+            if (keys.Count > 1)
+            {
+                var subElement = xmlDocument.CreateAttribute("SubElementID");
+                subElement.Value = keys[1];
+                if (newDisplayString.Attributes != null)
+                {
+                    newDisplayString.Attributes.Append(subElement);
+                }
+            }
+
+            var nameElement = xmlDocument.CreateNode(XmlNodeType.Element, "Name", null);
+            nameElement.InnerText = resource.Value;
+            newDisplayString.AppendChild(nameElement);
+            var stringsElement = xmlDocument.SelectSingleNode("//DisplayStrings");
+            if (stringsElement != null)
+                stringsElement.AppendChild(newDisplayString);
         }
 
         private void SaveJavaResource(string loadedFile)

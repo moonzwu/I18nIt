@@ -114,4 +114,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Text_please_create_a_translate_file_first_" xml:space="preserve">
+    <value>Please create a translate file first.</value>
+  </data>
+  <data name="Text_the_item_has_existed_in_translate_file__could_not_be_created_" xml:space="preserve">
+    <value>The item has existed in translate file, could not be created.</value>
+  </data>
 </root>

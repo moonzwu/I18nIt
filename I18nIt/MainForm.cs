@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using I18nIt.Properties;
 
 namespace I18nIt
 {
@@ -226,6 +227,36 @@ namespace I18nIt
             {
                 item.BackColor = Color.Red;
             }
+        }
+
+        private void lvBaseList_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right && lvBaseList.SelectedItems.Count > 0)
+            {
+                cmsPopup.Show(lvBaseList, new Point(e.X, e.Y));
+            }
+        }
+
+        private void addToToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(_translateFileName))
+            {
+                MessageBox.Show(Resources.Text_please_create_a_translate_file_first_);
+                return;
+            }
+
+            var stringkey = lvBaseList.SelectedItems[0].Name;
+            var text = lvBaseList.SelectedItems[0].Text;
+            var stringResourceCache = StringResourceCache.GetInstance();
+            var isExisted = stringResourceCache.Check(_translateFileName, stringkey);
+            if (isExisted)
+            {
+                MessageBox.Show(Resources.Text_the_item_has_existed_in_translate_file__could_not_be_created_);
+                return;
+            }
+
+            lvTranslateList.Items.Add(stringkey, text, 0);
+            stringResourceCache.Update(_translateFileName, stringkey, text);
         }
     }
 }

@@ -466,8 +466,7 @@
           <!--Model-->
         </DisplayString>
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Seed.Class" SubElementID="Processors">
-          <Name>处理器</Name>
-          <!--Processors-->
+          <Name>Processors</Name>
         </DisplayString>
       </DisplayStrings>
     </LanguagePack>

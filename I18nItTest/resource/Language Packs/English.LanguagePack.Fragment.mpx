@@ -29,7 +29,8 @@
           </Description>
         </DisplayString>
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Host.Discovery">
-          <Name>Host Discovery</Name>
+          <Name>
+          </Name>
           <Description>Description for the new discovery.</Description>
         </DisplayString>
         <DisplayString ElementID="Lenovo.TMM.Server.MP.Host.LaunchTMM.ConsoleTask">

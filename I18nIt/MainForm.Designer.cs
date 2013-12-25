@@ -53,12 +53,16 @@
             this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripId = new System.Windows.Forms.ToolStripStatusLabel();
             this.updateToolStripTimer = new System.Windows.Forms.Timer(this.components);
+            this.cmsPopup = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addToToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeThisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menubar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scContent)).BeginInit();
             this.scContent.Panel1.SuspendLayout();
             this.scContent.Panel2.SuspendLayout();
             this.scContent.SuspendLayout();
             this.statusStrip.SuspendLayout();
+            this.cmsPopup.SuspendLayout();
             this.SuspendLayout();
             // 
             // menubar
@@ -276,6 +280,27 @@
             this.updateToolStripTimer.Interval = 1500;
             this.updateToolStripTimer.Tick += new System.EventHandler(this.updateToolStripTimer_Tick);
             // 
+            // cmsPopup
+            // 
+            this.cmsPopup.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addToToolStripMenuItem,
+            this.removeThisToolStripMenuItem});
+            this.cmsPopup.Name = "cmsPopup";
+            this.cmsPopup.Size = new System.Drawing.Size(153, 70);
+            // 
+            // addToToolStripMenuItem
+            // 
+            this.addToToolStripMenuItem.Name = "addToToolStripMenuItem";
+            this.addToToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addToToolStripMenuItem.Text = "Add to";
+            this.addToToolStripMenuItem.Click += new System.EventHandler(this.addToToolStripMenuItem_Click);
+            // 
+            // removeThisToolStripMenuItem
+            // 
+            this.removeThisToolStripMenuItem.Name = "removeThisToolStripMenuItem";
+            this.removeThisToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.removeThisToolStripMenuItem.Text = "Remove this";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -302,6 +327,7 @@
             this.scContent.ResumeLayout(false);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
+            this.cmsPopup.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -332,6 +358,9 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.Timer updateToolStripTimer;
         private System.Windows.Forms.ToolStripStatusLabel toolStripId;
+        private System.Windows.Forms.ContextMenuStrip cmsPopup;
+        private System.Windows.Forms.ToolStripMenuItem addToToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem removeThisToolStripMenuItem;
     }
 }
 

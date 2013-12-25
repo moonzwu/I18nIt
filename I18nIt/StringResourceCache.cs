@@ -39,6 +39,14 @@ namespace I18nIt
             }
         }
 
+        public bool Check(string key, string stringkey)
+        {
+            lock (cache)
+            {
+                return cache.ContainsKey(key) && cache[key].ResourceStringsDictionary.ContainsKey(stringkey);
+            }
+        }
+
         public void Clear()
         {
             lock (cache)

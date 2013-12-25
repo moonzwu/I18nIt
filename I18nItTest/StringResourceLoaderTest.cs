@@ -69,6 +69,20 @@ namespace I18nItTest
             Assert.AreEqual("new text", newStringResourceLoader.ResourceStringsDictionary["Enum.843e5d2b2f3941d882c6a5f4834e19a3$HostName"]);
         }
 
+        [TestMethod]
+        public void Should_save_add_a_new_element_to_mp_resource_file()
+        {
+            var path = CopyToTempFolder("resource/mpresource.mpx");
+            var stringResourceLoader = new StringResourceLoader();
+            stringResourceLoader.LoadFile(path);
+            stringResourceLoader.ResourceStringsDictionary["newElementId$subId"] = "new text";
+            stringResourceLoader.Save();
+
+            var newStringResourceLoader = new StringResourceLoader();
+            newStringResourceLoader.LoadFile(path);
+            Assert.AreEqual(2, newStringResourceLoader.ResourceStringsDictionary.Keys.Count);
+        }
+
         private String CopyToTempFolder(string fileName)
         {
             var tempPath = Path.GetTempPath();
