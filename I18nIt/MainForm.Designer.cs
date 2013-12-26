@@ -56,6 +56,7 @@
             this.cmsPopup = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addToToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeThisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.miCloneFile = new System.Windows.Forms.ToolStripMenuItem();
             this.menubar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scContent)).BeginInit();
             this.scContent.Panel1.SuspendLayout();
@@ -83,6 +84,7 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miOpenBaseFile,
             this.miOpenTranslateFile,
+            this.miCloneFile,
             this.toolStripMenuItem1,
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
@@ -93,33 +95,33 @@
             // miOpenBaseFile
             // 
             this.miOpenBaseFile.Name = "miOpenBaseFile";
-            this.miOpenBaseFile.Size = new System.Drawing.Size(188, 22);
+            this.miOpenBaseFile.Size = new System.Drawing.Size(263, 22);
             this.miOpenBaseFile.Text = "Open Base File";
             this.miOpenBaseFile.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // miOpenTranslateFile
             // 
             this.miOpenTranslateFile.Name = "miOpenTranslateFile";
-            this.miOpenTranslateFile.Size = new System.Drawing.Size(188, 22);
+            this.miOpenTranslateFile.Size = new System.Drawing.Size(263, 22);
             this.miOpenTranslateFile.Text = "Open Translate File";
             this.miOpenTranslateFile.Click += new System.EventHandler(this.miOpenTranslateFile_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(188, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(263, 22);
             this.toolStripMenuItem1.Text = "Close";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(185, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(260, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(263, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -286,20 +288,28 @@
             this.addToToolStripMenuItem,
             this.removeThisToolStripMenuItem});
             this.cmsPopup.Name = "cmsPopup";
-            this.cmsPopup.Size = new System.Drawing.Size(153, 70);
+            this.cmsPopup.Size = new System.Drawing.Size(192, 48);
             // 
             // addToToolStripMenuItem
             // 
             this.addToToolStripMenuItem.Name = "addToToolStripMenuItem";
-            this.addToToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.addToToolStripMenuItem.Text = "Add to";
+            this.addToToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.addToToolStripMenuItem.Text = "Add to translate file";
             this.addToToolStripMenuItem.Click += new System.EventHandler(this.addToToolStripMenuItem_Click);
             // 
             // removeThisToolStripMenuItem
             // 
             this.removeThisToolStripMenuItem.Name = "removeThisToolStripMenuItem";
-            this.removeThisToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.removeThisToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.removeThisToolStripMenuItem.Text = "Remove this";
+            this.removeThisToolStripMenuItem.Click += new System.EventHandler(this.removeThisToolStripMenuItem_Click);
+            // 
+            // miCloneFile
+            // 
+            this.miCloneFile.Name = "miCloneFile";
+            this.miCloneFile.Size = new System.Drawing.Size(263, 22);
+            this.miCloneFile.Text = "Clone Base File To Translate File";
+            this.miCloneFile.Click += new System.EventHandler(this.miCloneFile_Click);
             // 
             // MainForm
             // 
@@ -361,6 +371,7 @@
         private System.Windows.Forms.ContextMenuStrip cmsPopup;
         private System.Windows.Forms.ToolStripMenuItem addToToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeThisToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem miCloneFile;
     }
 }
 

@@ -70,11 +70,29 @@ namespace I18nIt.Properties {
         }
         
         /// <summary>
+        ///   查找类似 Please open the base file first. 的本地化字符串。
+        /// </summary>
+        internal static string Text_please_open_the_base_file_first_ {
+            get {
+                return ResourceManager.GetString("Text_please_open_the_base_file_first_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 The item has existed in translate file, could not be created. 的本地化字符串。
         /// </summary>
         internal static string Text_the_item_has_existed_in_translate_file__could_not_be_created_ {
             get {
                 return ResourceManager.GetString("Text_the_item_has_existed_in_translate_file__could_not_be_created_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Translate file has existed. Can&apos;t clone base file. 的本地化字符串。
+        /// </summary>
+        internal static string Text_Translate_file_has_existed__Can_t_clone_base_file_ {
+            get {
+                return ResourceManager.GetString("Text_Translate_file_has_existed__Can_t_clone_base_file_", resourceCulture);
             }
         }
     }

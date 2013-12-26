@@ -134,6 +134,8 @@ namespace I18nIt
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             _sync.SaveAll();
+            _baseFileName = "";
+            _translateFileName = "";
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -255,8 +257,44 @@ namespace I18nIt
                 return;
             }
 
-            lvTranslateList.Items.Add(stringkey, text, 0);
+            var createdItem = lvTranslateList.Items.Add(stringkey, text, 0);
+            createdItem.Selected = true;
             stringResourceCache.Update(_translateFileName, stringkey, text);
         }
+
+        private void removeThisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (lvBaseList.SelectedItems.Count > 0)
+            {
+                var removedItem = lvBaseList.SelectedItems[0];
+                lvBaseList.Items.RemoveByKey(removedItem.Name);
+                lvTranslateList.Items.RemoveByKey(removedItem.Name);
+                var stringResourceCache = StringResourceCache.GetInstance();
+                stringResourceCache.Remove(_baseFileName, removedItem.Name);
+                stringResourceCache.Remove(_translateFileName, removedItem.Name);
+            }
+        }
+
+        private void miCloneFile_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(_baseFileName))
+            {
+                MessageBox.Show(Resources.Text_please_open_the_base_file_first_);
+                return;
+            }
+
+            if (!String.IsNullOrEmpty(_translateFileName))
+            {
+                MessageBox.Show(Resources.Text_Translate_file_has_existed__Can_t_clone_base_file_);
+                return;
+            }
+
+            var cloneForm = new CloneForm();
+            if (cloneForm.ShowDialog() == DialogResult.OK)
+            {
+                _translateFileName = cloneForm.TranslateFileName;
+                //new FileMenu().LoadResourceFileAndFillView(lvTranslateList, _translateFileName);
+            }
+         }
     }
 }

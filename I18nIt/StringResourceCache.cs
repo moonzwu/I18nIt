@@ -54,5 +54,13 @@ namespace I18nIt
                 cache.Clear();
             }
         }
+
+        public void Remove(string key, string stringkey)
+        {
+            lock (cache)
+            {
+                cache[key].ResourceStringsDictionary.Remove(stringkey);
+            }
+        }
     }
 }
