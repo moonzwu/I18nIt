@@ -1,0 +1,12 @@
+<ManagementPack ContentReadable="true" SchemaVersion="1.1" OriginalSchemaVersion="1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="Enum.843e5d2b2f3941d882c6a5f4834e19a3" SubElementID="HostName">
+          <Name>Just a test file</Name>
+          <Description>Use this incident classification for all cases where the user's password has expired and must be reset.</Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPack>

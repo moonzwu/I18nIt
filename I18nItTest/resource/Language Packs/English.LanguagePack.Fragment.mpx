@@ -1,0 +1,368 @@
+<ManagementPackFragment SchemaVersion="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="Lenovo.TMM.Server">
+          <Name>Lenovo TMM Server</Name>
+          <Description>Lenovo TMM Server: This Management Pack contains the definitions that are specific to
+          Lenovo Hardware details</Description>
+        </DisplayString>
+        <!--Display string -->
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Host.Class">
+          <Name>Host</Name>
+          <Description>
+          </Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Host.Class" SubElementID="HostName">
+          <Name>Host</Name>
+          <Description>
+          </Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Host.Class" SubElementID="BMCIP">
+          <Name>TMM IPV4</Name>
+          <Description>
+          </Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Host.Relationship">
+          <Name>Host Relationship</Name>
+          <Description>
+          </Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Host.Discovery">
+          <Name>
+          </Name>
+          <Description>Description for the new discovery.</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Host.LaunchTMM.ConsoleTask">
+          <Name>Launch TMM</Name>
+          <Description>Launch TMM</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Host.Root">
+          <Name>Host Actions</Name>
+          <Description>
+          </Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Host.RDP.ConsoleTask">
+          <Name>Launch Host RDP Console</Name>
+          <Description>Launch Remote Desktop</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Host.Restart.ConsoleTask">
+          <Name>Restart Server</Name>
+          <Description>Restart Server</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Host.Shutdown.ConsoleTask">
+          <Name>Power Off Server</Name>
+          <Description>Power Off Server</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Host.View">
+          <Name>Hosts</Name>
+          <Description>Description for the new view</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.BaseboardClass">
+          <Name>System Board</Name>
+          <Description>
+          </Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.BaseboardClass" SubElementID="Manufacturer">
+          <Name>System Board Manufacturer</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.BaseboardClass" SubElementID="ProductName">
+          <Name>Server Model</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.BaseboardClass" SubElementID="SerialNumber">
+          <Name>Serial Number</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.BaseboardClass" SubElementID="UUID">
+          <Name>UUID</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Fan.Class">
+          <Name>Fan</Name>
+          <Description>
+          </Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Fan.Class" SubElementID="RotationalSpeed">
+          <Name>Rotational Speed (RPM)</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Fan.Class" SubElementID="CurrentState">
+          <Name>Status</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Fan.Class" SubElementID="Description">
+          <Name>Description</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Memory.Class">
+          <Name>Memory</Name>
+          <Description>
+          </Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Memory.Class" SubElementID="Manufacturer">
+          <Name>Manufacturer of each DIMM</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Memory.Class" SubElementID="MemoryType">
+          <Name>Type of each DIMM</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Memory.Class" SubElementID="DeviceLocator">
+          <Name>Location of each DIMM</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Memory.Class" SubElementID="Capacity">
+          <Name>Capacity of each DIMM (MB)</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Memory.Class" SubElementID="SerialNumber">
+          <Name>Serial Number for each DIMM</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Memory.Class" SubElementID="PartNumber">
+          <Name>Part Number for each DIMM</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Class">
+          <Name>Processor</Name>
+          <Description>
+          </Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Class" SubElementID="Manufacturer">
+          <Name>Processor Manufacturer</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Class" SubElementID="ModelName">
+          <Name>Model Name</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Class" SubElementID="Speed">
+          <Name>Speed (GHz)</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Class" SubElementID="SocketNumber">
+          <Name>Socket Number</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Class" SubElementID="NumberOfLogicalProcessors">
+          <Name>Number of Logical Processors</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Class" SubElementID="NumberOfCores">
+          <Name>Number of Cores</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Class" SubElementID="L2CacheSize">
+          <Name>L2 Cache Size (MB)</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Class" SubElementID="L3CacheSize">
+          <Name>L3 Cache Size (MB)</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Class" SubElementID="ProcessorStatus">
+          <Name>Status</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.ServerInfo.Class">
+          <Name>Server Information</Name>
+          <Description>
+          </Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.ServerInfo.Class" SubElementID="HostOSVersion">
+          <Name>OS Version</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.ServerInfo.Class" SubElementID="NumberOfVMs">
+          <Name>Number of VMs</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.ServerInfo.Class" SubElementID="BIOSVersion">
+          <Name>BIOS Version</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.ServerInfo.Class" SubElementID="NoOfThreads">
+          <Name>Number of Threads</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.ServerInfo.Class" SubElementID="NoOfProcessors">
+          <Name>Number of Processors</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.ServerInfo.Class" SubElementID="NoOfCores">
+          <Name>Number of Cores</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.TemperatureSensor.Class">
+          <Name>Temperature Sensor</Name>
+          <Description>
+          </Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.TemperatureSensor.Class" SubElementID="CurrentTemperature">
+          <Name>Current Temperature (Degree C)</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.TemperatureSensor.Class" SubElementID="UpperThresholdCriticalTemperature">
+          <Name>Upper Threshold Critical Temperature (Degree C)</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.TemperatureSensor.Class" SubElementID="UpperThresholdFatalTemperature">
+          <Name>Upper Threshold Fatal Temperature (Degree C)</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.TemperatureSensor.Class" SubElementID="UpperThresholdNonCriticalTemperature">
+          <Name>Upper Threshold Non-Critical Temperature (Degree C)</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.TemperatureSensor.Class" SubElementID="Description">
+          <Name>Description</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.TemperatureSensor.Class" SubElementID="TempSensorName">
+          <Name>Temperature Sensor Name</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.TemperatureSensor.Class" SubElementID="CurrentState">
+          <Name>Status</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Baseboard.Discovery">
+          <Name>Baseboard Discovery</Name>
+          <Description>Description for the new discovery.</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Fan.Discovery">
+          <Name>Fan Discovery</Name>
+          <Description>Description for the new discovery.</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Memory.Discovery">
+          <Name>Memory Discovery</Name>
+          <Description>Description for the new discovery.</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Processor.Discovery">
+          <Name>Processor Discovery</Name>
+          <Description>Description for the new discovery.</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.ServerInfoDiscovery">
+          <Name>ServerInfo Discovery</Name>
+          <Description>Description for the new discovery.</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.TemperatureSensor.Discovery">
+          <Name>TemperatureSensor Discovery</Name>
+          <Description>Description for the new discovery.</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Fan.UnitMonitor">
+          <Name>Fan Unit Monitor</Name>
+          <Description>Description for the new unit monitor.</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Fan.UnitMonitor" SubElementID="Success">
+          <Name>Success</Name>
+          <Description>Success</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Fan.UnitMonitor" SubElementID="Warning">
+          <Name>Warning</Name>
+          <Description>Warning</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Fan.UnitMonitor" SubElementID="Critical">
+          <Name>Critical</Name>
+          <Description>Critical</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.MemoryUnitMonitor">
+          <Name>Memory Unit Monitor</Name>
+          <Description>Description for the new unit monitor.</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.MemoryUnitMonitor" SubElementID="UnderThreshold">
+          <Name>UnderThreshold</Name>
+          <Description>UnderThreshold</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.MemoryUnitMonitor" SubElementID="OverThreshold">
+          <Name>OverThreshold</Name>
+          <Description>OverThreshold</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Processor.UnitMonitor">
+          <Name>Processor Unit Monitor</Name>
+          <Description>Description for the new unit monitor.</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Processor.UnitMonitor" SubElementID="UnderThreshold">
+          <Name>UnderThreshold</Name>
+          <Description>UnderThreshold</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Processor.UnitMonitor" SubElementID="OverThreshold">
+          <Name>OverThreshold</Name>
+          <Description>OverThreshold</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.TemperatureSensor.UnitMonitor">
+          <Name>TemperatureSensor Unit Monitor</Name>
+          <Description>Description for the new unit monitor.</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.TemperatureSensor.UnitMonitor" SubElementID="Success">
+          <Name>Success</Name>
+          <Description>Success</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.TemperatureSensor.UnitMonitor" SubElementID="Warning">
+          <Name>Warning</Name>
+          <Description>Warning</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.TemperatureSensor.UnitMonitor" SubElementID="Critical">
+          <Name>Critical</Name>
+          <Description>Critical</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Root">
+          <Name>Lenovo TMM</Name>
+          <Description>
+          </Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.AgentServers.Root">
+          <Name>Lenovo Agent Servers</Name>
+          <Description>
+          </Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Root">
+          <Name>Inventory</Name>
+          <Description>
+          </Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Processor.Relationship">
+          <Name>Processor Relationship</Name>
+          <Description>
+          </Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Memory.Relationship">
+          <Name>Memory Relationship</Name>
+          <Description>
+          </Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Fan.Relationship">
+          <Name>Fan Relationship</Name>
+          <Description>
+          </Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.TemperatureSensor.Relationship">
+          <Name>Temperature Sensor Relationship</Name>
+          <Description>
+          </Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.Baseboard.Relationship">
+          <Name>Baseboard Relationship</Name>
+          <Description>
+          </Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Inventory.ServerInfo.Relationship">
+          <Name>ServerInfo Relationship</Name>
+          <Description>
+          </Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.BaseboardView">
+          <Name>System Board</Name>
+          <Description>Description for the new view</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.FanView">
+          <Name>Fans</Name>
+          <Description>Description for the new view</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Memory.View">
+          <Name>Memory</Name>
+          <Description>Description for the new view</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Processor.View">
+          <Name>Processors</Name>
+          <Description>Description for the new view</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.ServerInfo.View">
+          <Name>Server Information</Name>
+          <Description>Description for the new view</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.TemperatureSensor.View">
+          <Name>Temperature Sensors</Name>
+          <Description>Description for the new view</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Seed.Discovery">
+          <Name>Seed Discovery</Name>
+          <Description>Description for the new discovery.</Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Seed.Class">
+          <Name>Seed Class</Name>
+          <Description>
+          </Description>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Seed.Class" SubElementID="Model">
+          <Name>Model</Name>
+        </DisplayString>
+        <DisplayString ElementID="Lenovo.TMM.Server.MP.Seed.Class" SubElementID="Processors">
+          <Name>Processors</Name>
+        </DisplayString>
+        <!--<DisplayString ElementID="System.Entity" SubElementID="DisplayName">
+          <Name>DisplayName</Name>
+          <Description></Description>
+        </DisplayString>-->
+        <!--Display string -->
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>
