@@ -1,6 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+<<<<<<< HEAD
+=======
+using System.Linq;
+using System.Security.AccessControl;
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
 using System.Text;
 using System.Xml;
 
@@ -16,6 +21,7 @@ namespace I18nIt
             get { return _resourceStringsDictionary; }
         }
 
+<<<<<<< HEAD
         public static StringResourceType DecideResourceType(string file)
         {
             var extension = Path.GetExtension(file);
@@ -23,13 +29,28 @@ namespace I18nIt
             if (extension.Equals(".properties", StringComparison.InvariantCultureIgnoreCase))
             {
                 return StringResourceType.JavaStyle;
+=======
+        public static StringResouceType DecideResourceType(string file)
+        {
+            var extension = Path.GetExtension(file);
+            if (!File.Exists(file) || extension == null) return StringResouceType.Unknown;
+            if (extension.Equals(".properties", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return StringResouceType.JavaStyle;
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
             }
 
             if (extension.Equals(".mpx", StringComparison.InvariantCultureIgnoreCase))
             {
+<<<<<<< HEAD
                 return StringResourceType.MPStyle;
             }
             return StringResourceType.Unknown;
+=======
+                return StringResouceType.MPStyle;
+            }
+            return StringResouceType.Unknown;
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
         }
 
         public Boolean LoadFile(string file)
@@ -38,9 +59,15 @@ namespace I18nIt
             _loadedFile = file;
             switch (type)
             {
+<<<<<<< HEAD
                 case StringResourceType.JavaStyle:
                     return LoadJavaResource(file);
                 case StringResourceType.MPStyle:
+=======
+                case StringResouceType.JavaStyle:
+                    return LoadJavaResource(file);
+                case StringResouceType.MPStyle:
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
                     return LoadMpResource(file);
                 default:
                     return false;
@@ -66,7 +93,11 @@ namespace I18nIt
             }
         }
 
+<<<<<<< HEAD
         protected bool LoadMpResource(string file)
+=======
+        private bool LoadMpResource(string file)
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
         {
             var xmlDocument = new XmlDocument();
             xmlDocument.Load(file);
@@ -94,10 +125,17 @@ namespace I18nIt
             var type = DecideResourceType(_loadedFile);
             switch (type)
             {
+<<<<<<< HEAD
                 case StringResourceType.JavaStyle:
                      SaveJavaResource(_loadedFile);
                     break;
                 case StringResourceType.MPStyle:
+=======
+                case StringResouceType.JavaStyle:
+                     SaveJavaResource(_loadedFile);
+                    break;
+                case StringResouceType.MPStyle:
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
                      SaveMpResource(_loadedFile);
                     break;
             }

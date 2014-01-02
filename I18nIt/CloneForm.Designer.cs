@@ -41,15 +41,25 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(20, 16);
             this.label1.Name = "label1";
+<<<<<<< HEAD
             this.label1.Size = new System.Drawing.Size(60, 20);
+=======
+            this.label1.Size = new System.Drawing.Size(50, 17);
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
             this.label1.TabIndex = 0;
             this.label1.Text = "Name: ";
             // 
             // tbxFileName
             // 
+<<<<<<< HEAD
             this.tbxFileName.Location = new System.Drawing.Point(114, 13);
             this.tbxFileName.Name = "tbxFileName";
             this.tbxFileName.Size = new System.Drawing.Size(258, 27);
+=======
+            this.tbxFileName.Location = new System.Drawing.Point(99, 13);
+            this.tbxFileName.Name = "tbxFileName";
+            this.tbxFileName.Size = new System.Drawing.Size(238, 23);
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
             this.tbxFileName.TabIndex = 1;
             // 
             // label2
@@ -57,24 +67,40 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(20, 61);
             this.label2.Name = "label2";
+<<<<<<< HEAD
             this.label2.Size = new System.Drawing.Size(88, 20);
+=======
+            this.label2.Size = new System.Drawing.Size(72, 17);
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
             this.label2.TabIndex = 2;
             this.label2.Text = "Language: ";
             // 
             // cbxLanguage
             // 
             this.cbxLanguage.FormattingEnabled = true;
+<<<<<<< HEAD
             this.cbxLanguage.Location = new System.Drawing.Point(114, 58);
             this.cbxLanguage.Name = "cbxLanguage";
             this.cbxLanguage.Size = new System.Drawing.Size(258, 28);
+=======
+            this.cbxLanguage.Location = new System.Drawing.Point(99, 58);
+            this.cbxLanguage.Name = "cbxLanguage";
+            this.cbxLanguage.Size = new System.Drawing.Size(238, 25);
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
             this.cbxLanguage.TabIndex = 3;
             // 
             // btnOK
             // 
+<<<<<<< HEAD
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Location = new System.Drawing.Point(99, 121);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(80, 33);
+=======
+            this.btnOK.Location = new System.Drawing.Point(99, 121);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(75, 23);
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
             this.btnOK.TabIndex = 4;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -82,10 +108,16 @@
             // 
             // btnCanncel
             // 
+<<<<<<< HEAD
             this.btnCanncel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCanncel.Location = new System.Drawing.Point(208, 121);
             this.btnCanncel.Name = "btnCanncel";
             this.btnCanncel.Size = new System.Drawing.Size(87, 33);
+=======
+            this.btnCanncel.Location = new System.Drawing.Point(208, 121);
+            this.btnCanncel.Name = "btnCanncel";
+            this.btnCanncel.Size = new System.Drawing.Size(75, 23);
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
             this.btnCanncel.TabIndex = 4;
             this.btnCanncel.Text = "Canncel";
             this.btnCanncel.UseVisualStyleBackColor = true;
@@ -93,9 +125,15 @@
             // 
             // CloneForm
             // 
+<<<<<<< HEAD
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 166);
+=======
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(360, 166);
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
             this.Controls.Add(this.btnCanncel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.cbxLanguage);

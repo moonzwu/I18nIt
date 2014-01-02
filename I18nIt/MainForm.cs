@@ -1,4 +1,8 @@
 ﻿using System;
+<<<<<<< HEAD
+=======
+using System.Collections.Generic;
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -11,7 +15,11 @@ namespace I18nIt
         private const int FixPading = 5;
         private string _baseFileName = "";
         private PersistenceSync _sync;
+<<<<<<< HEAD
         private string _translatedFileName = "";
+=======
+        private string _translateFileName = "";
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
 
         public MainForm()
         {
@@ -52,7 +60,11 @@ namespace I18nIt
             {
                 var fm = new FileMenu();
                 fm.LoadResourceFileAndFillView(lvTranslateList, openFileDialog.FileName);
+<<<<<<< HEAD
                 _translatedFileName = openFileDialog.FileName;
+=======
+                _translateFileName = openFileDialog.FileName;
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
             }
         }
 
@@ -90,11 +102,19 @@ namespace I18nIt
 
         private void CascadingSelected(ListView baseList, ListView translateList)
         {
+<<<<<<< HEAD
             ListView.SelectedListViewItemCollection selectedItems = baseList.SelectedItems;
             if (selectedItems.Count != 0)
             {
                 string name = selectedItems[0].Name;
                 ListViewItem[] listViewItems = translateList.Items.Find(name, true);
+=======
+            var selectedItems = baseList.SelectedItems;
+            if (selectedItems.Count != 0)
+            {
+                string name = selectedItems[0].Name;
+                var listViewItems = translateList.Items.Find(name, true);
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
                 if (listViewItems.Length > 0)
                 {
                     translateList.SelectedItems.Clear();
@@ -120,22 +140,36 @@ namespace I18nIt
 
         private void lvTranslateList_AfterLabelEdit(object sender, LabelEditEventArgs e)
         {
+<<<<<<< HEAD
             UpdateToCache(sender, e, _translatedFileName);
+=======
+            UpdateToCache(sender, e, _translateFileName);
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
         }
 
         private static void UpdateToCache(object sender, LabelEditEventArgs e, string fileName)
         {
+<<<<<<< HEAD
             var stringResourceCache = StringResourceCache.GetInstance();
             var listView = (ListView) sender;
             stringResourceCache.Update(fileName, listView.FocusedItem.Name, 
                 e.Label ?? listView.SelectedItems[0].Text);
+=======
+            StringResourceCache stringResourceCache = StringResourceCache.GetInstance();
+            var listView = (ListView) sender;
+            stringResourceCache.Update(fileName, listView.FocusedItem.Name, e.Label);
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             _sync.SaveAll();
             _baseFileName = "";
+<<<<<<< HEAD
             _translatedFileName = "";
+=======
+            _translateFileName = "";
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -144,8 +178,11 @@ namespace I18nIt
             lvBaseList.Items.Clear();
             lvTranslateList.Items.Clear();
             StringResourceCache.GetInstance().Clear();
+<<<<<<< HEAD
             _baseFileName = "";
             _translatedFileName = "";
+=======
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
         }
 
         private void updateToolStripTimer_Tick(object sender, EventArgs e)
@@ -156,7 +193,11 @@ namespace I18nIt
         private void findToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var searchForm = new SearchForm();
+<<<<<<< HEAD
             var dialogResult = searchForm.ShowDialog();
+=======
+            DialogResult dialogResult = searchForm.ShowDialog();
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
             if (dialogResult == DialogResult.OK)
             {
                 if (String.IsNullOrEmpty(searchForm.SearchKeyword)) return;
@@ -169,7 +210,11 @@ namespace I18nIt
         private static void SearchKeyword(string keyword, ListView targetList)
         {
             foreach (
+<<<<<<< HEAD
                 var item in targetList.Items.Cast<ListViewItem>().Where(item => item.Text.Contains(keyword)))
+=======
+                ListViewItem item in targetList.Items.Cast<ListViewItem>().Where(item => item.Text.Contains(keyword)))
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
             {
                 item.BackColor = Color.Aquamarine;
             }
@@ -200,8 +245,13 @@ namespace I18nIt
         private void checkToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var stringResourceLoader =
+<<<<<<< HEAD
                 StringResourceCache.GetInstance().GetResourceLoader(_translatedFileName);
             if (_translatedFileName.ToLower().Contains("chinese"))
+=======
+                StringResourceCache.GetInstance().GetResourceLoader(_translateFileName);
+            if (_translateFileName.ToLower().Contains("chinese"))
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
             {
                 var chineseValidater = new ChineseValidater();
                 var errorList = chineseValidater.CheckDelimiter(stringResourceLoader.ResourceStringsDictionary);
@@ -209,13 +259,18 @@ namespace I18nIt
                     var item in
                         lvTranslateList.Items.Cast<ListViewItem>().Where(item => errorList.Contains(item.Name)))
                 {
+<<<<<<< HEAD
                     item.BackColor = Color.Yellow;
+=======
+                    item.BackColor = Color.Red;
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
                 }
             }
         }
 
         private void checkUpcaselowcaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
 
             if (!String.IsNullOrEmpty(_translatedFileName))
             {
@@ -226,6 +281,10 @@ namespace I18nIt
             {
                 CheckSentenceOnLanguage(_baseFileName, lvBaseList);
             }
+=======
+            CheckSentenceOnLanguage(_translateFileName, lvTranslateList);
+            CheckSentenceOnLanguage(_baseFileName, lvBaseList);
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
         }
 
         private void CheckSentenceOnLanguage(string fileName, ListView viewList)
@@ -237,7 +296,11 @@ namespace I18nIt
             foreach (
                 var item in viewList.Items.Cast<ListViewItem>().Where(item => errorList.Contains(item.Name)))
             {
+<<<<<<< HEAD
                 item.BackColor = Color.Yellow;
+=======
+                item.BackColor = Color.Red;
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
             }
         }
 
@@ -251,7 +314,11 @@ namespace I18nIt
 
         private void addToToolStripMenuItem_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             if (String.IsNullOrEmpty(_translatedFileName))
+=======
+            if (String.IsNullOrEmpty(_translateFileName))
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
             {
                 MessageBox.Show(Resources.Text_please_create_a_translate_file_first_);
                 return;
@@ -260,7 +327,11 @@ namespace I18nIt
             var stringkey = lvBaseList.SelectedItems[0].Name;
             var text = lvBaseList.SelectedItems[0].Text;
             var stringResourceCache = StringResourceCache.GetInstance();
+<<<<<<< HEAD
             var isExisted = stringResourceCache.Check(_translatedFileName, stringkey);
+=======
+            var isExisted = stringResourceCache.Check(_translateFileName, stringkey);
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
             if (isExisted)
             {
                 MessageBox.Show(Resources.Text_the_item_has_existed_in_translate_file__could_not_be_created_);
@@ -269,7 +340,11 @@ namespace I18nIt
 
             var createdItem = lvTranslateList.Items.Add(stringkey, text, 0);
             createdItem.Selected = true;
+<<<<<<< HEAD
             stringResourceCache.Update(_translatedFileName, stringkey, text);
+=======
+            stringResourceCache.Update(_translateFileName, stringkey, text);
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
         }
 
         private void removeThisToolStripMenuItem_Click(object sender, EventArgs e)
@@ -281,7 +356,11 @@ namespace I18nIt
                 lvTranslateList.Items.RemoveByKey(removedItem.Name);
                 var stringResourceCache = StringResourceCache.GetInstance();
                 stringResourceCache.Remove(_baseFileName, removedItem.Name);
+<<<<<<< HEAD
                 stringResourceCache.Remove(_translatedFileName, removedItem.Name);
+=======
+                stringResourceCache.Remove(_translateFileName, removedItem.Name);
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
             }
         }
 
@@ -293,12 +372,17 @@ namespace I18nIt
                 return;
             }
 
+<<<<<<< HEAD
             if (!String.IsNullOrEmpty(_translatedFileName))
+=======
+            if (!String.IsNullOrEmpty(_translateFileName))
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
             {
                 MessageBox.Show(Resources.Text_Translate_file_has_existed__Can_t_clone_base_file_);
                 return;
             }
 
+<<<<<<< HEAD
             var cloneForm = new CloneForm(_baseFileName);
             if (cloneForm.ShowDialog() == DialogResult.OK)
             {
@@ -332,5 +416,14 @@ namespace I18nIt
         {
             new AboutForm().ShowDialog();
         }
+=======
+            var cloneForm = new CloneForm();
+            if (cloneForm.ShowDialog() == DialogResult.OK)
+            {
+                _translateFileName = cloneForm.TranslateFileName;
+                //new FileMenu().LoadResourceFileAndFillView(lvTranslateList, _translateFileName);
+            }
+         }
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
     }
 }

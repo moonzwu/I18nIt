@@ -126,7 +126,10 @@
   <data name="Text_Translate_file_has_existed__Can_t_clone_base_file_" xml:space="preserve">
     <value>Translate file has existed. Can't clone base file.</value>
   </data>
+<<<<<<< HEAD
   <data name="Text_Please_open_the_base_file_and_translated_file_together_first_" xml:space="preserve">
     <value>Please open the base file and translated file together first.</value>
   </data>
+=======
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
 </root>

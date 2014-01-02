@@ -19,6 +19,7 @@ namespace I18nItTest
 
             var javaFile = CreateATempFile(javaResource);
             var resouceType1 = StringResourceLoader.DecideResourceType(javaFile);
+<<<<<<< HEAD
             Assert.AreEqual(StringResourceType.JavaStyle, resouceType1);
 
             var mpFile = CreateATempFile(mpResource);
@@ -28,6 +29,17 @@ namespace I18nItTest
             var otherFile = CreateATempFile(otherResource);
             var resouceType3 = StringResourceLoader.DecideResourceType(otherFile);
             Assert.AreEqual(StringResourceType.Unknown, resouceType3);
+=======
+            Assert.AreEqual(StringResouceType.JavaStyle, resouceType1);
+
+            var mpFile = CreateATempFile(mpResource);
+            var resouceType2 = StringResourceLoader.DecideResourceType(mpFile);
+            Assert.AreEqual(StringResouceType.MPStyle, resouceType2);
+
+            var otherFile = CreateATempFile(otherResource);
+            var resouceType3 = StringResourceLoader.DecideResourceType(otherFile);
+            Assert.AreEqual(StringResouceType.Unknown, resouceType3);
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
         }
 
         [TestMethod]

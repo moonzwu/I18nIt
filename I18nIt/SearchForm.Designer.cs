@@ -41,27 +41,47 @@
             this.label1.Location = new System.Drawing.Point(12, 30);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
+<<<<<<< HEAD
             this.label1.Size = new System.Drawing.Size(91, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Find what : ";
+=======
+            this.label1.Size = new System.Drawing.Size(66, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Key word:";
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
             // 
             // tbxKeywords
             // 
             this.tbxKeywords.ImeMode = System.Windows.Forms.ImeMode.On;
+<<<<<<< HEAD
             this.tbxKeywords.Location = new System.Drawing.Point(109, 25);
             this.tbxKeywords.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbxKeywords.Name = "tbxKeywords";
             this.tbxKeywords.Size = new System.Drawing.Size(278, 27);
+=======
+            this.tbxKeywords.Location = new System.Drawing.Point(93, 25);
+            this.tbxKeywords.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxKeywords.Name = "tbxKeywords";
+            this.tbxKeywords.Size = new System.Drawing.Size(277, 23);
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
             this.tbxKeywords.TabIndex = 1;
             this.tbxKeywords.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbxKeywords_KeyUp);
             // 
             // btnSearch
             // 
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+<<<<<<< HEAD
             this.btnSearch.Location = new System.Drawing.Point(93, 120);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(90, 32);
+=======
+            this.btnSearch.Location = new System.Drawing.Point(93, 126);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(90, 25);
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -70,10 +90,17 @@
             // btnCanncel
             // 
             this.btnCanncel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+<<<<<<< HEAD
             this.btnCanncel.Location = new System.Drawing.Point(223, 120);
             this.btnCanncel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnCanncel.Name = "btnCanncel";
             this.btnCanncel.Size = new System.Drawing.Size(88, 32);
+=======
+            this.btnCanncel.Location = new System.Drawing.Point(223, 126);
+            this.btnCanncel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnCanncel.Name = "btnCanncel";
+            this.btnCanncel.Size = new System.Drawing.Size(82, 25);
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
             this.btnCanncel.TabIndex = 3;
             this.btnCanncel.Text = "Canncel";
             this.btnCanncel.UseVisualStyleBackColor = true;
@@ -82,19 +109,34 @@
             // ckbInRight
             // 
             this.ckbInRight.AutoSize = true;
+<<<<<<< HEAD
             this.ckbInRight.Location = new System.Drawing.Point(109, 69);
             this.ckbInRight.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.ckbInRight.Name = "ckbInRight";
             this.ckbInRight.Size = new System.Drawing.Size(193, 24);
             this.ckbInRight.TabIndex = 4;
             this.ckbInRight.Text = "Include Translated File";
+=======
+            this.ckbInRight.Location = new System.Drawing.Point(93, 72);
+            this.ckbInRight.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.ckbInRight.Name = "ckbInRight";
+            this.ckbInRight.Size = new System.Drawing.Size(118, 21);
+            this.ckbInRight.TabIndex = 4;
+            this.ckbInRight.Text = "In Translate File";
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
             this.ckbInRight.UseVisualStyleBackColor = true;
             // 
             // SearchForm
             // 
+<<<<<<< HEAD
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(398, 168);
+=======
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(387, 161);
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
             this.Controls.Add(this.ckbInRight);
             this.Controls.Add(this.btnCanncel);
             this.Controls.Add(this.btnSearch);
@@ -108,7 +150,11 @@
             this.MinimizeBox = false;
             this.Name = "SearchForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+<<<<<<< HEAD
             this.Text = "Search";
+=======
+            this.Text = "Searching";
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
             this.Load += new System.EventHandler(this.SearchForm_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.SearchForm_KeyUp);
             this.ResumeLayout(false);

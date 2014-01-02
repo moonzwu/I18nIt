@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 ﻿using System;
 using System.Collections.Generic;
+=======
+﻿using System.Collections.Generic;
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
 using System.Linq;
 
 namespace I18nIt
@@ -15,6 +19,7 @@ namespace I18nIt
             return errorStrings;
         }
 
+<<<<<<< HEAD
         public List<string> CheckSentence(IDictionary<string, string> sourceDictionary)
         {
             return (from keyval in sourceDictionary 
@@ -45,6 +50,21 @@ namespace I18nIt
             }
 
             return true;
+=======
+        public List<string> CheckSentence(IDictionary<string, string> souDictionary)
+        {
+            return (from keyval in souDictionary 
+                where !CheckWord(keyval) select keyval.Key).ToList();
+        }
+
+        private static bool CheckWord(KeyValuePair<string, string> keyval)
+        {
+            var words = keyval.Value.Split(' ');
+            return !(from word in words 
+                     where !word.Equals("of") && !word.Equals("to") 
+                     let titleCase = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(word.ToLower()) 
+                     where !titleCase.Equals(word) select word).Any();
+>>>>>>> 069b630bf56cecca78e774995feaa66eba697f75
         }
     }
 }
