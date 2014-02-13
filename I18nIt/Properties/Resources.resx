@@ -129,4 +129,13 @@
   <data name="Text_Please_open_the_base_file_and_translated_file_together_first_" xml:space="preserve">
     <value>Please open the base file and translated file together first.</value>
   </data>
+  <data name="text_Please_open_the_base_file_and_translate_file_first" xml:space="preserve">
+    <value>Please open the base file and translate file first</value>
+  </data>
+  <data name="Text_Export_succeed_" xml:space="preserve">
+    <value>Export succeed!</value>
+  </data>
+  <data name="Text_Export_failed_" xml:space="preserve">
+    <value>Export failed!</value>
+  </data>
 </root>

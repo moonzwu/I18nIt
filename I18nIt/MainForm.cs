@@ -332,5 +332,27 @@ namespace I18nIt
         {
             new AboutForm().ShowDialog();
         }
+
+
+        private void miExportExcel_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(_baseFileName) || string.IsNullOrEmpty(_translatedFileName))
+            {
+                MessageBox.Show(Resources.text_Please_open_the_base_file_and_translate_file_first);
+                return;
+            }
+
+            var saveFileDialog = new SaveFileDialog();
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                var fileName = saveFileDialog.FileName;
+                var cache = StringResourceCache.GetInstance();
+                var enDic = cache.GetResourceLoader(_baseFileName).ResourceStringsDictionary;
+                var cnDic = cache.GetResourceLoader(_translatedFileName).ResourceStringsDictionary;
+                var documentConverter = new DocumentConverter();
+                var isSucceed = documentConverter.ExportToExcel(fileName, enDic, cnDic);
+                MessageBox.Show(isSucceed ? Resources.Text_Export_succeed_ : Resources.Text_Export_failed_);
+            }
+        }
     }
 }
