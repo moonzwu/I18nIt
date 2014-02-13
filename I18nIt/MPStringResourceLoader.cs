@@ -16,7 +16,6 @@ namespace I18nIt
                 {
                     var idAttr = languageNode.Attributes["ID"];
                     idAttr.Value = value;
-
                     var defaultAttr = languageNode.Attributes["IsDefault"];
                     defaultAttr.Value = "false";
                     _xmlDocument.Save(_fileName);
