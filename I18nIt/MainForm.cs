@@ -354,5 +354,42 @@ namespace I18nIt
                 MessageBox.Show(isSucceed ? Resources.Text_Export_succeed_ : Resources.Text_Export_failed_);
             }
         }
+
+        private void miImportExcel_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(_baseFileName) || string.IsNullOrEmpty(_translatedFileName))
+            {
+                MessageBox.Show(Resources.text_Please_open_the_base_file_and_translate_file_first);
+                return;
+            }
+
+            var openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                var fileName = openFileDialog.FileName;
+                var documentConverter = new DocumentConverter();
+                var isSucceed = documentConverter.ImportFromExcel(fileName, _translatedFileName);
+
+                if (isSucceed)
+                {
+                    UpdateListView(_translatedFileName, lvTranslateList);
+                }
+
+                MessageBox.Show(isSucceed ? "Import file succeed!" : "Import excel file failed!");
+            }
+        }
+
+        private void UpdateListView(string targetFileName, ListView targetListView)
+        {
+            var loader = StringResourceCache.GetInstance().GetResourceLoader(targetFileName);
+            foreach (ListViewItem item in targetListView.Items)
+            {
+                var value = "";
+                if (loader.ResourceStringsDictionary.TryGetValue(item.Name, out value))
+                {
+                    item.Text = value;
+                }
+            }
+        }
     }
 }

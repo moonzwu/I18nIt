@@ -57,5 +57,40 @@ namespace I18nIt
                 return false;
             }
         }
+
+        public bool ImportFromExcel(string importFile, string translateFile)
+        {
+            try
+            {
+                var xlsApp = new ApplicationClass();
+                var workbook = xlsApp.Workbooks.Open(importFile,
+                    Type.Missing, Type.Missing, Type.Missing, 
+                    Type.Missing, Type.Missing, Type.Missing, 
+                    Type.Missing, Type.Missing, Type.Missing, 
+                    Type.Missing, Type.Missing, Type.Missing, 
+                    Type.Missing, Type.Missing);
+                var worksheet = workbook.Worksheets[1] as Worksheet;
+                if (worksheet == null)
+                {
+                    return false;
+                }
+
+                var cache = StringResourceCache.GetInstance();
+                var startRow = 1;
+                var rowsCount = worksheet.UsedRange.Rows.Count;
+                for (var i = 0; i < rowsCount; i++)
+                {
+                    var id = worksheet.Cells[++startRow, 2] as Range;
+                    var cnValue = worksheet.Cells[startRow, 5] as Range;
+                    cache.Update(translateFile, id.Text as string, cnValue.Text as string);
+                }
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }
