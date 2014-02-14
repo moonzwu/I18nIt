@@ -15,12 +15,7 @@ namespace I18nIt
             try
             {
                 var xlsApp = new ApplicationClass();
-                var workbook = xlsApp.Workbooks.Open(excelFileName,
-                    Type.Missing, Type.Missing, Type.Missing,
-                    Type.Missing, Type.Missing, Type.Missing,
-                    Type.Missing, Type.Missing, Type.Missing,
-                    Type.Missing, Type.Missing, Type.Missing,
-                    Type.Missing, Type.Missing);
+                var workbook = xlsApp.Workbooks.Add(XlWBATemplate.xlWBATWorksheet);
                 var worksheet = workbook.Worksheets[1] as Worksheet;
                 if (worksheet == null)
                 {
@@ -28,20 +23,28 @@ namespace I18nIt
                 }
 
                 var startRow = 1;
-                worksheet.Name = "translation";
-                worksheet.Cells[startRow, 1] = "ID";
-                worksheet.Cells[startRow, 2] = "English text";
-                worksheet.Cells[startRow, 3] = "Chinese text";
+                worksheet.Name = "Text";
+                worksheet.Cells[startRow, 1] = "Sl. No.";
+                worksheet.Cells[startRow, 2] = "ID";
+                worksheet.Cells[startRow, 3] = "Current message Text";
+                worksheet.Cells[startRow, 4] = "Suggested Message by LENOVO in English";
+                worksheet.Cells[startRow, 5] = "Translation in Chinese Language provided by LENOVO";
+                worksheet.Cells[startRow, 6] = "Remarks";
+
 
                 foreach (var enItem in englishDictionary)
                 {
-                    worksheet.Cells[++startRow, 1] = enItem.Key;
-                    worksheet.Cells[startRow, 2] = enItem.Value;
+                    worksheet.Cells[++startRow, 1] = startRow -1;
+                    worksheet.Cells[startRow, 2] = enItem.Key;
+                    worksheet.Cells[startRow, 3] = enItem.Value;
+                    worksheet.Cells[startRow, 4] = "";
                     var cnValue = "";
-                    worksheet.Cells[startRow, 3] = localDictionary.TryGetValue(enItem.Key, out cnValue) ? cnValue : "";
+                    worksheet.Cells[startRow, 5] = localDictionary.TryGetValue(enItem.Key, out cnValue) ? cnValue : "";
+                    worksheet.Cells[startRow, 6] = "";
                 }
 
-
+                workbook.Saved = true;
+                workbook.SaveCopyAs(excelFileName);
                 workbook.Close(true, Type.Missing, Type.Missing);
                 workbook = null;
                 xlsApp.Quit();
