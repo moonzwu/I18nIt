@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using Microsoft.Office.Interop.Excel;
@@ -23,6 +24,7 @@ namespace I18nIt
                 }
 
                 var startRow = 1;
+                const int maxColumnIndex = 6;
                 worksheet.Name = "Text";
                 worksheet.Cells[startRow, 1] = "Sl. No.";
                 worksheet.Cells[startRow, 2] = "ID";
@@ -31,6 +33,10 @@ namespace I18nIt
                 worksheet.Cells[startRow, 5] = "Translation in Chinese Language provided by LENOVO";
                 worksheet.Cells[startRow, 6] = "Remarks";
 
+                for (var i = 1; i <= maxColumnIndex; i++)
+                {
+                    SetHeaderStyle(worksheet, startRow, i);
+                }
 
                 foreach (var enItem in englishDictionary)
                 {
@@ -56,6 +62,13 @@ namespace I18nIt
             {
                 return false;
             }
+        }
+
+        private static void SetHeaderStyle(Worksheet worksheet, int startRow, int columnIndex)
+        {
+            var range = worksheet.Cells[startRow, columnIndex] as Range;
+            range.Interior.Color = ColorTranslator.ToOle(Color.Black);
+            range.Font.Color = ColorTranslator.ToOle(Color.White);
         }
 
         public bool ImportFromExcel(string importFile, string translateFile)
