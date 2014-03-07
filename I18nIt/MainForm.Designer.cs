@@ -37,6 +37,7 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.miCloneFile = new System.Windows.Forms.ToolStripMenuItem();
             this.miExportExcel = new System.Windows.Forms.ToolStripMenuItem();
+            this.miImportExcel = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -59,7 +60,6 @@
             this.cmsPopup = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addToToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeThisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.miImportExcel = new System.Windows.Forms.ToolStripMenuItem();
             this.menubar.SuspendLayout();
             this.scContent.Panel1.SuspendLayout();
             this.scContent.Panel2.SuspendLayout();
@@ -131,6 +131,13 @@
             this.miExportExcel.Size = new System.Drawing.Size(227, 24);
             this.miExportExcel.Text = "Export Excel";
             this.miExportExcel.Click += new System.EventHandler(this.miExportExcel_Click);
+            // 
+            // miImportExcel
+            // 
+            this.miImportExcel.Name = "miImportExcel";
+            this.miImportExcel.Size = new System.Drawing.Size(227, 24);
+            this.miImportExcel.Text = "Import Excel";
+            this.miImportExcel.Click += new System.EventHandler(this.miImportExcel_Click);
             // 
             // toolStripSeparator3
             // 
@@ -221,7 +228,7 @@
             // 
             this.scContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.scContent.Location = new System.Drawing.Point(0, 28);
-            this.scContent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.scContent.Margin = new System.Windows.Forms.Padding(4);
             this.scContent.Name = "scContent";
             // 
             // scContent.Panel1
@@ -247,7 +254,7 @@
             this.lvBaseList.HideSelection = false;
             this.lvBaseList.LabelEdit = true;
             this.lvBaseList.Location = new System.Drawing.Point(0, 0);
-            this.lvBaseList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lvBaseList.Margin = new System.Windows.Forms.Padding(4);
             this.lvBaseList.Name = "lvBaseList";
             this.lvBaseList.Size = new System.Drawing.Size(370, 589);
             this.lvBaseList.TabIndex = 0;
@@ -268,7 +275,7 @@
             this.lvTranslateList.HideSelection = false;
             this.lvTranslateList.LabelEdit = true;
             this.lvTranslateList.Location = new System.Drawing.Point(0, 0);
-            this.lvTranslateList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lvTranslateList.Margin = new System.Windows.Forms.Padding(4);
             this.lvTranslateList.Name = "lvTranslateList";
             this.lvTranslateList.Size = new System.Drawing.Size(750, 589);
             this.lvTranslateList.TabIndex = 1;
@@ -277,6 +284,7 @@
             this.lvTranslateList.AfterLabelEdit += new System.Windows.Forms.LabelEditEventHandler(this.lvTranslateList_AfterLabelEdit);
             this.lvTranslateList.SelectedIndexChanged += new System.EventHandler(this.lvTranslateList_SelectedIndexChanged);
             this.lvTranslateList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvTranslateList_MouseDoubleClick);
+            this.lvTranslateList.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lvTranslateList_MouseDown);
             // 
             // statusStrip
             // 
@@ -335,13 +343,6 @@
             this.removeThisToolStripMenuItem.Text = "Remove this";
             this.removeThisToolStripMenuItem.Click += new System.EventHandler(this.removeThisToolStripMenuItem_Click);
             // 
-            // miImportExcel
-            // 
-            this.miImportExcel.Name = "miImportExcel";
-            this.miImportExcel.Size = new System.Drawing.Size(227, 24);
-            this.miImportExcel.Text = "Import Excel";
-            this.miImportExcel.Click += new System.EventHandler(this.miImportExcel_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -354,7 +355,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MainMenuStrip = this.menubar;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "I18nIt";

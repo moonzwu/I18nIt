@@ -88,21 +88,23 @@ namespace I18nIt
             EditText(lvTranslateList);
         }
 
-        private void CascadingSelected(ListView baseList, ListView translateList)
+        private void CascadingSelected(ListView srcList, ListView tagList)
         {
-            ListView.SelectedListViewItemCollection selectedItems = baseList.SelectedItems;
+            var selectedItems = srcList.SelectedItems;
             if (selectedItems.Count != 0)
             {
+                
                 string name = selectedItems[0].Name;
-                ListViewItem[] listViewItems = translateList.Items.Find(name, true);
+                ListViewItem[] listViewItems = tagList.Items.Find(name, true);
+                tagList.SelectedItems.Clear();
                 if (listViewItems.Length > 0)
                 {
-                    translateList.SelectedItems.Clear();
                     var selectedItem = listViewItems[0];
                     selectedItem.Selected = true;
                     selectedItem.EnsureVisible();
                     toolStripId.Text = String.Format(" ID: {0}", name);
                 }
+
             }
         }
 
@@ -274,13 +276,25 @@ namespace I18nIt
 
         private void removeThisToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (lvBaseList.SelectedItems.Count > 0)
+            if (lvBaseList.Focused && lvBaseList.SelectedItems.Count > 0)
             {
                 var removedItem = lvBaseList.SelectedItems[0];
                 lvBaseList.Items.RemoveByKey(removedItem.Name);
-                lvTranslateList.Items.RemoveByKey(removedItem.Name);
                 var stringResourceCache = StringResourceCache.GetInstance();
                 stringResourceCache.Remove(_baseFileName, removedItem.Name);
+               
+                if (!String.IsNullOrEmpty(_translatedFileName))
+                {
+                    lvTranslateList.Items.RemoveByKey(removedItem.Name);
+                    stringResourceCache.Remove(_translatedFileName, removedItem.Name);
+                }
+            }
+
+            if (lvTranslateList.Focused && lvTranslateList.SelectedItems.Count > 0)
+            {
+                var removedItem = lvTranslateList.SelectedItems[0];
+                lvTranslateList.Items.RemoveByKey(removedItem.Name);
+                var stringResourceCache = StringResourceCache.GetInstance();
                 stringResourceCache.Remove(_translatedFileName, removedItem.Name);
             }
         }
@@ -389,6 +403,15 @@ namespace I18nIt
                 {
                     item.Text = value;
                 }
+            }
+        }
+
+        private void lvTranslateList_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right && lvTranslateList.SelectedItems.Count > 0)
+            {
+                cmsPopup.Items.Remove(addToToolStripMenuItem);
+                cmsPopup.Show(lvTranslateList, new Point(e.X, e.Y));
             }
         }
     }

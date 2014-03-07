@@ -17,7 +17,7 @@ namespace I18nItTest
             mf.LoadResourceFileAndFillView(listView, "resource/teststringfiles.properties");
             Assert.AreEqual(listView.Items.Count, 2);
             Assert.AreEqual(listView.Items[0].Text, "名字");
-            Assert.AreEqual(listView.Items[1].Text, "年龄");
+            Assert.AreEqual(listView.Items[1].Text, "地址");
         }
 
         [TestMethod]

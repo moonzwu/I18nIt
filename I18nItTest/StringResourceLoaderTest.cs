@@ -42,6 +42,32 @@ namespace I18nItTest
         }
 
         [TestMethod]
+        public void Should_get_resx_resource_when_given_a_dotnet_resource_file()
+        {
+            const string resxResource = "resource/Resource.resx";
+            var stringResourceLoader = new StringResourceLoader();
+            bool result = stringResourceLoader.LoadFile(resxResource);
+            Assert.IsTrue(result);
+            Assert.AreEqual(7, stringResourceLoader.ResourceStringsDictionary.Count);
+        }
+
+        [TestMethod]
+        public void Should_save_the_changed_text_to_resx_file()
+        {
+            var path = CopyToTempFolder("resource/Resource.resx");
+            var stringResourceLoader = new StringResourceLoader();
+            stringResourceLoader.LoadFile(path);
+            const string testString = "It is a new active";
+            stringResourceLoader.ResourceStringsDictionary["Active"] = testString;
+            stringResourceLoader.Save();
+
+
+            var newStringResourceLoader = new StringResourceLoader();
+            newStringResourceLoader.LoadFile(path);
+            Assert.AreEqual(testString, newStringResourceLoader.ResourceStringsDictionary["Active"]);
+        }
+
+        [TestMethod]
         public void Should_save_the_changed_text_to_java_resource_file()
         {
             var path = CopyToTempFolder("resource/teststringfiles.properties");

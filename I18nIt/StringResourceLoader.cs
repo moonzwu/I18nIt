@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Resources;
 using System.Text;
+using System.Windows.Forms;
 using System.Xml;
 
 namespace I18nIt
@@ -29,6 +32,12 @@ namespace I18nIt
             {
                 return StringResourceType.MPStyle;
             }
+
+            if (extension.Equals(".resx", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return StringResourceType.ResxStyle;
+            }
+
             return StringResourceType.Unknown;
         }
 
@@ -42,9 +51,22 @@ namespace I18nIt
                     return LoadJavaResource(file);
                 case StringResourceType.MPStyle:
                     return LoadMpResource(file);
+                case StringResourceType.ResxStyle:
+                    return LoadResxResource(file);
                 default:
                     return false;
             }
+        }
+
+        private Boolean LoadResxResource(string file)
+        {
+            var resourceReader = new ResXResourceReader(file);
+            foreach (DictionaryEntry item in resourceReader)
+            {
+                _resourceStringsDictionary.Add(item.Key.ToString(), item.Value.ToString());
+            }
+            resourceReader.Close();
+            return true;
         }
 
         private bool LoadJavaResource(string file)
@@ -60,7 +82,14 @@ namespace I18nIt
                     }
 
                     var keyAndText = line.Split('=');
-                    _resourceStringsDictionary.Add(keyAndText[0], keyAndText[1]);
+                    try
+                    {
+                        _resourceStringsDictionary.Add(keyAndText[0], keyAndText[1]);
+                    }
+                    catch (ArgumentException e)
+                    {
+                        MessageBox.Show("Duplcate key: " + keyAndText[0], "alert", MessageBoxButtons.OK);
+                    }
                 }
                 return true;
             }
@@ -100,7 +129,24 @@ namespace I18nIt
                 case StringResourceType.MPStyle:
                      SaveMpResource(_loadedFile);
                     break;
+                case StringResourceType.ResxStyle:
+                    SaveResxResource(_loadedFile);
+                    break;
             }
+        }
+
+        private void SaveResxResource(string loadedFile)
+        {
+            var resourceWriter = new ResXResourceWriter(loadedFile);
+            DeleteIfExists(loadedFile);
+            foreach (var key in _resourceStringsDictionary.Keys)
+            {
+                var value = _resourceStringsDictionary[key];
+                value = value ?? "";
+                resourceWriter.AddResource(key, value);
+            }
+            resourceWriter.Generate();
+            resourceWriter.Close();
         }
 
         private void SaveMpResource(string loadedFile)
